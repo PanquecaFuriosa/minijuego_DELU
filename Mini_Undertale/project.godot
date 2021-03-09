@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "base_movement",
+"language": "GDScript",
+"path": "res://base_movement.gd"
+} ]
 _global_script_class_icons={
-
+"base_movement": ""
 }
 
 [application]

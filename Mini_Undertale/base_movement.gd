@@ -1,11 +1,11 @@
 extends Node2D
 
-
+class_name base_movement
 # Declare member variables here.
 
 var entity: KinematicBody2D
 
-export(float) var speed :float = 50 
+var speed :float
 var direction :Vector2 = Vector2.ZERO
 
 func _ready():
@@ -16,13 +16,11 @@ func _physics_process(delta: float) -> void:
 	if Get_input() != null:
 		direction = Get_input()
 		
+
 	entity.move_and_slide(direction*speed)
+
 		
-		
-func Get_input() -> Vector2:
-	#Cuando se tiene que mover esta wea
-	var axis: Vector2 = Vector2.ZERO
-	axis.x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
-	axis.y = int(Input.is_action_pressed("move_down")) - int(Input.is_action_pressed("move_up"))
-	return axis.normalized()
+	#Decide como se va a mover la entidad, depende (por ejemplo el movimiento del jugador es diferente a todos los demas)
+func Get_input():
+	pass
 	
