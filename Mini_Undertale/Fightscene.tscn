@@ -4,12 +4,12 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Commander.gd" type="Script" id=3]
 [ext_resource path="res://throwaway/projectile.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Spawner.gd" type="Script" id=5]
+[ext_resource path="res://Spawner.tscn" type="PackedScene" id=5]
 
 [node name="Fightscene" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 496, 184 )
+position = Vector2( 512, 168 )
 
 [node name="GUI" parent="." instance=ExtResource( 1 )]
 margin_left = 96.0
@@ -23,12 +23,12 @@ position = Vector2( 496, 360 )
 [node name="Player" parent="Box (Placeholder)" instance=ExtResource( 2 )]
 speed = 100.0
 
-[node name="Attack" type="Node2D" parent="."]
-position = Vector2( 496, 280 )
-
-[node name="Commander" type="Node2D" parent="Attack"]
+[node name="Commander" type="Node2D" parent="."]
 script = ExtResource( 3 )
 Projectile1 = ExtResource( 4 )
 
-[node name="Spawner0" type="Position2D" parent="Attack/Commander"]
-script = ExtResource( 5 )
+[node name="Spawner0" parent="Commander" instance=ExtResource( 5 )]
+position = Vector2( 384, 256 )
+
+[node name="Spawner1" parent="Commander" instance=ExtResource( 5 )]
+position = Vector2( 512, 184 )

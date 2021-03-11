@@ -1,13 +1,15 @@
 extends Node2D
 
+onready var scene = get_node('/root/Fightscene')
+
 func Fire(projectile, direction = PI/2):
 	#Instancing the projectile
 	var proj = projectile.instance()
-	add_child(proj)
+	scene.add_child(proj)
 	
 	#Setting position
 	
-	proj.position = position
+	proj.position = get_global_position()
 	
 	#Setting initial speed
 	proj.linear_velocity = Vector2(proj.speed,0)
