@@ -31,4 +31,3 @@ Projectile1 = ExtResource( 4 )
 position = Vector2( 384, 256 )
 
 [node name="Spawner1" parent="Commander" instance=ExtResource( 5 )]
-position = Vector2( 512, 184 )

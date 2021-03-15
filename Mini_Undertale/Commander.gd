@@ -8,26 +8,20 @@ export (PackedScene) var Projectile1 :PackedScene
 var positions = [Vector2(640,256),Vector2(384,256)]
 var i = 0
 
-onready var Spawner0 = $'Spawner0'
-onready var Spawner1 = $'Spawner1'
-
-
-func _physics_process(delta):
-	
-	#Testing, The spawners should only change their position between turns, for this stuff it would be better to 
-	#create timers in the scene since yields are inconsistent...
-	yield(get_tree().create_timer(0.2),"timeout")
-	Spawner0.position = positions[i%2]
-	i += 1
-
+#Ten a todos los spawners que vayas a usar puestos en la escena desde el principio.
+#No hay que usarlos todos al mismo tiempo.
+onready var Spawner0 :Position2D = $'Spawner0'
+onready var Spawner1 :Position2D = $'Spawner1'
 
 func _ready():
-	#Player's turn
 	
-	#This should run when a signal is received (the signal from the player ending his turn)
+	#This should run when a signal is received (the signal from the player ending its turn)
+	
+	
+	#Move spawners if necessary.
+	Spawner1.position = Vector2(640,256)
 	#Start a timer for the duration of the enemies' turn (when turns are implemented)
-	
-	#.. And start firing (you can edit and create shoot patterns here btw)
+	#.. And start firing (you can edit and create shoot patterns btw)
 	
 	Shoot_Pattern1(Projectile1,Spawner0, 1)
 	Shoot_Pattern1(Projectile1,Spawner1, 0.5)
@@ -42,4 +36,8 @@ func Shoot_Pattern1(what :PackedScene, where: Position2D, reload_time :float, di
 	while true:
 		where.Fire(what,direction)
 		yield(get_tree().create_timer(reload_time),"timeout")
+		
+#Creates a spawner in a set location and saves it in a a
+
+	
 
