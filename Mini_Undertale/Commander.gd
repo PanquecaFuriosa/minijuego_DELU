@@ -1,12 +1,10 @@
 extends Node2D
 
 
+#Declarar proyectiles para colocarlos desde la escena
 export (PackedScene) var Projectile1 :PackedScene
 
 
-#Testing
-var positions = [Vector2(640,256),Vector2(384,256)]
-var i = 0
 
 #Ten a todos los spawners que vayas a usar puestos en la escena desde el principio.
 #No hay que usarlos todos al mismo tiempo.
@@ -27,7 +25,7 @@ func _ready():
 	Shoot_Pattern1(Projectile1,Spawner1, 0.5)
 
 #Just shoot them projectiles downwards
-func Shoot_Pattern1(what :PackedScene, where: Position2D, reload_time :float, direction: float = PI/2):
+func Shoot_Pattern1(what :PackedScene, where: Position2D, reload_time :float, direction: float = 180):
 	
 		
 	#Keep the loop as long as the turn timer isn't stopped (when turns are implemented)
@@ -37,7 +35,3 @@ func Shoot_Pattern1(what :PackedScene, where: Position2D, reload_time :float, di
 		where.Fire(what,direction)
 		yield(get_tree().create_timer(reload_time),"timeout")
 		
-#Creates a spawner in a set location and saves it in a a
-
-	
-

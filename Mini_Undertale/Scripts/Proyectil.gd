@@ -3,6 +3,7 @@ export var velocidad = 500
 var trayecto = Vector2.ZERO
 
 func elegir_trayectoria():
+	
 	if get_rotation_degrees() > -5 and get_rotation_degrees() < 5:
 		trayecto = Vector2.UP * velocidad
 	elif get_rotation_degrees() > 175 and get_rotation_degrees() < 185:
