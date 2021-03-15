@@ -6,6 +6,5 @@ onready var Movement = $'Movement'
 export(float) var speed :float = 50 
 
 func _ready():
-	print('Huuuuh?')
 	
 	Movement.speed =speed

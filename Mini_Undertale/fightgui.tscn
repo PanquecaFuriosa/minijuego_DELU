@@ -14,7 +14,6 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 5.13
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-editor/display_folded = true
 margin_top = 455.0
 margin_right = 1021.0
 margin_bottom = 505.0
@@ -23,7 +22,6 @@ custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer"]
-editor/display_folded = true
 margin_top = 10.0
 margin_right = 1011.0
 margin_bottom = 50.0
@@ -56,7 +54,6 @@ size_flags_horizontal = 3
 text = "LV 1"
 
 [node name="HP" type="MarginContainer" parent="MarginContainer/HBoxContainer3"]
-editor/display_folded = true
 margin_left = 338.0
 margin_right = 672.0
 margin_bottom = 40.0
@@ -94,7 +91,6 @@ margin_bottom = 40.0
 size_flags_horizontal = 3
 
 [node name="Bottons" type="HBoxContainer" parent="."]
-editor/display_folded = true
 margin_top = 509.0
 margin_right = 1021.0
 margin_bottom = 597.0
@@ -120,24 +116,24 @@ rect_min_size = Vector2( 200, 0 )
 
 [node name="VSeparator2" type="VSeparator" parent="Bottons"]
 margin_left = 477.0
-margin_right = 542.0
+margin_right = 543.0
 margin_bottom = 88.0
 size_flags_horizontal = 3
 
 [node name="Button3" type="Button" parent="Bottons"]
-margin_left = 546.0
-margin_right = 746.0
+margin_left = 547.0
+margin_right = 747.0
 margin_bottom = 88.0
 rect_min_size = Vector2( 200, 0 )
 
 [node name="VSeparator3" type="VSeparator" parent="Bottons"]
-margin_left = 750.0
-margin_right = 815.0
+margin_left = 751.0
+margin_right = 816.0
 margin_bottom = 88.0
 size_flags_horizontal = 3
 
 [node name="Button4" type="Button" parent="Bottons"]
-margin_left = 819.0
-margin_right = 1019.0
+margin_left = 820.0
+margin_right = 1020.0
 margin_bottom = 88.0
 rect_min_size = Vector2( 200, 0 )
