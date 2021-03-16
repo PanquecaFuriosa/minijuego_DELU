@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://TheBox.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 34.1667, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 33.8333 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 32.8334, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 32.5748 )
+
+[node name="TheBox" type="Node2D"]
+position = Vector2( 526.5, 266.833 )
+scale = Vector2( 3.5, 3.5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Frame" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Frame"]
+position = Vector2( 0, -40 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Frame"]
+position = Vector2( 40, 0 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Frame/StaticBody2D2"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Frame"]
+position = Vector2( 0, 40 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Frame/StaticBody2D3"]
+shape = SubResource( 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Frame"]
+position = Vector2( -40, 0 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Frame/StaticBody2D4"]
+shape = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
