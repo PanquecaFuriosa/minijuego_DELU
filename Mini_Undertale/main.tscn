@@ -1,9 +1,47 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenas/Paredes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/PC Computer - Undertale - Ruins.png" type="Texture" id=3]
+[ext_resource path="res://Escenas/Puertas.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/main.gd" type="Script" id=5]
+
+[sub_resource type="TileSet" id=1]
+0/name = "PC Computer - Undertale - Ruins.png 0"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 320, 256, 288, 160 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 384, 184 )
+position = Vector2( 201.311, 182.74 )
+z_index = 1
 speed = 200.0
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 3.6, 3.8 )
+tile_set = SubResource( 1 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Paredes" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="Puertas" parent="." instance=ExtResource( 4 )]
+visible = false
+[connection signal="cambia_scena" from="Puertas" to="." method="_on_Puertas_cambia_scena"]

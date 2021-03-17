@@ -1,39 +1,209 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Sprites/PC Computer - Undertale - Ruins.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 300 )
+extents = Vector2( 5, 80 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 300 )
+extents = Vector2( 5, 55 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 510, 8 )
+extents = Vector2( 5, 80 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 510, 8 )
+extents = Vector2( 5, 60 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 370, 5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 5, 40 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 30, 5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 5, 40 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 35, 5 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 360, 5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 210, 5 )
+
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 150, 5 )
+
+[sub_resource type="TileSet" id=12]
+0/name = "PC Computer - Undertale - Ruins.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 320, 256, 288, 160 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 5, 105 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 5, 50 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 5, 80 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 5, 55 )
 
 [node name="Paredes" type="Node2D"]
 
 [node name="Pared Iz" type="StaticBody2D" parent="."]
-position = Vector2( 0, 300 )
+position = Vector2( 75, 260 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared Iz"]
 shape = SubResource( 1 )
 
-[node name="Pared Der" type="StaticBody2D" parent="."]
-position = Vector2( 1020, 300 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared Der"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared Iz"]
+position = Vector2( 40, -120 )
+rotation = 0.750492
 shape = SubResource( 2 )
 
-[node name="Pared Arr" type="StaticBody2D" parent="."]
-position = Vector2( 510, 600 )
+[node name="Pared Der" type="StaticBody2D" parent="."]
+position = Vector2( 950, 260 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared Arr"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared Der"]
 shape = SubResource( 3 )
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared Der"]
+position = Vector2( -45, -120 )
+rotation = -0.750492
+shape = SubResource( 4 )
+
 [node name="Pared Ab" type="StaticBody2D" parent="."]
-position = Vector2( 510, 0 )
+position = Vector2( 510, 565 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pared Ab"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared Ab"]
+position = Vector2( -365, -45 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pared Ab"]
+position = Vector2( -330, -82 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Pared Ab"]
+position = Vector2( 368, -40 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Pared Ab"]
+position = Vector2( 330, -80 )
+shape = SubResource( 9 )
+
+[node name="Pared Arr" type="StaticBody2D" parent="."]
+position = Vector2( 510, 105 )
+z_index = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared Arr"]
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared Arr"]
+position = Vector2( 0, 80 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pared Arr"]
+position = Vector2( 0, 150 )
+shape = SubResource( 16 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 3.6, 3.8 )
+tile_set = SubResource( 12 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0 )
+
+[node name="Pared escalera izq-izq" type="StaticBody2D" parent="."]
+position = Vector2( 145.754, 409.474 )
+rotation = -0.750492
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared escalera izq-izq"]
+shape = SubResource( 13 )
+
+[node name="Pared escalera izq-der" type="StaticBody2D" parent="."]
+position = Vector2( 295, 335 )
+rotation = -0.750492
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared escalera izq-der"]
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared escalera izq-der"]
+position = Vector2( 55, -105 )
+rotation = 1.48353
+shape = SubResource( 14 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Pared escalera izq-der"]
+position = Vector2( 50, 40 )
+rotation = 0.750492
+shape = SubResource( 17 )
+
+[node name="Pared escalera der-izq" type="StaticBody2D" parent="."]
+position = Vector2( 722.378, 346.189 )
+rotation = 0.750492
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared escalera der-izq"]
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pared escalera der-izq"]
+position = Vector2( -55, -115 )
+rotation = -1.48353
+shape = SubResource( 15 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Pared escalera der-izq"]
+position = Vector2( -55, 35 )
+rotation = -0.750492
+shape = SubResource( 17 )
+
+[node name="Pared escalera der-der" type="StaticBody2D" parent="."]
+position = Vector2( 873.988, 410.734 )
+rotation = 0.750492
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pared escalera der-der"]
+shape = SubResource( 13 )
