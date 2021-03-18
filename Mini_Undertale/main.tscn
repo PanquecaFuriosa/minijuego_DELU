@@ -28,6 +28,8 @@ script = ExtResource( 5 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 201.311, 182.74 )
 z_index = 1
+collision_layer = 1
+collision_mask = 1
 speed = 200.0
 
 [node name="TileMap" type="TileMap" parent="."]

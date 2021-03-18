@@ -1,6 +1,7 @@
 extends Area2D
-export var velocidad = 500
-var trayecto = Vector2.ZERO
+export(float) var velocidad = 500
+var trayecto :Vector2 = Vector2.ZERO
+export(int) var damage :int = 5
 
 func elegir_trayectoria():
 	if get_rotation_degrees() > -5 and get_rotation_degrees() < 5:
@@ -16,4 +17,7 @@ func _process(delta):
 	translate(trayecto * delta)
 
 func _on_Proyectil_body_entered(body):
-	self.queue_free()
+	self.call_deferred('queue_free')
+	body.get_node('Health').Health_Update(damage)
+	
+	

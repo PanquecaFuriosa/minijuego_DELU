@@ -1,6 +1,6 @@
 extends Node2D
 
-
+onready var player = get_parent()
 var max_hp :int = PlayerVariables.max_hp
 var current_hp :int = PlayerVariables.current_hp
 
@@ -21,4 +21,12 @@ func Health_Update(value):
 		Die()
 
 func Die():
+	#Desactivar hitbox
+	player.get_node("CollisionShape2D").set_deferred('disabled',true)
+	
+	#Desactivar movimiento
+	player.get_node("Movement").set_physics_process(false)
+	
+	#Aqui seria la transicion a la escena GAME OVER
+	
 	print('Ded')
