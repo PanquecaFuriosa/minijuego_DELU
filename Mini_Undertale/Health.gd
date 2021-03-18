@@ -15,7 +15,6 @@ func Health_Update(value):
 	#actualiza el singleton y envia la señal
 	PlayerVariables.current_hp = current_hp
 	emit_signal("Update_Health")
-	print(current_hp)
 	
 	if current_hp == 0:
 		Die()
@@ -28,5 +27,3 @@ func Die():
 	player.get_node("Movement").set_physics_process(false)
 	
 	#Aqui seria la transicion a la escena GAME OVER
-	
-	print('Ded')
