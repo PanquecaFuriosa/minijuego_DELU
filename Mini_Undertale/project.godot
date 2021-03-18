@@ -24,6 +24,10 @@ config/name="Mini_Undertale"
 run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PlayerVariables="*res://player_variables.gd"
+
 [input]
 
 move_up={
