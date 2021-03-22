@@ -1,157 +1,487 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Scripts/ProgressBar.gd" type="Script" id=1]
+[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://Escenas/GUI/GenericPanel3.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/ProgressBar.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/GUI/fightButton.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/GUI/fightButtonHover.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/GUI/fightButtonFocused.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/GUI/actButton.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/GUI/actButtonHover.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/GUI/actButtonFocused.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/GUI/itemButton.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/GUI/itemButtonHover.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/GUI/itemButtonFocused.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/GUI/mercyButton.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/GUI/mercyButtonHover.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/GUI/mercyButtonFocused.png" type="Texture" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [node name="VBoxContainer" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 1024.0
-margin_bottom = 453.0
+margin_bottom = 464.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-size_flags_stretch_ratio = 5.13
+size_flags_stretch_ratio = 6.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 margin_right = 1024.0
-margin_bottom = 224.0
+margin_bottom = 230.0
 size_flags_vertical = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
-margin_top = 228.0
+margin_top = 234.0
 margin_right = 1024.0
-margin_bottom = 453.0
+margin_bottom = 464.0
 size_flags_vertical = 3
-custom_constants/margin_bottom = 30
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Menu" type="TabContainer" parent="VBoxContainer/MarginContainer2"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 210.0
+tab_align = 0
+tabs_visible = false
+script = ExtResource( 1 )
+
+[node name="FightPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
+editor/display_folded = true
+margin_top = 8.0
+
+[node name="HBoxContainer" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer" index="0"]
+margin_right = 876.0
+margin_bottom = 158.0
+
+[node name="VBoxContainer" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer" index="0"]
+margin_right = 348.0
+margin_bottom = 138.0
+
+[node name="Item1" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer" index="0"]
+margin_right = 348.0
+margin_bottom = 43.0
+
+[node name="mButton" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer/Item1" index="0"]
+margin_right = 49.0
+margin_bottom = 43.0
+
+[node name="Label" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer/Item1" index="1"]
+margin_left = 53.0
+margin_top = 14.0
+margin_right = 348.0
+margin_bottom = 28.0
+
+[node name="Item2" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer" index="1"]
+editor/display_folded = false
+margin_top = 47.0
+margin_right = 348.0
+margin_bottom = 90.0
+
+[node name="mButton" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer/Item2" index="0"]
+margin_right = 49.0
+margin_bottom = 43.0
+
+[node name="Label" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer/Item2" index="1"]
+margin_left = 53.0
+margin_top = 14.0
+margin_right = 348.0
+margin_bottom = 28.0
+
+[node name="Item3" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer" index="2"]
+margin_top = 94.0
+margin_right = 348.0
+margin_bottom = 138.0
+
+[node name="mButton" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer/Item3" index="0"]
+margin_right = 49.0
+margin_bottom = 44.0
+
+[node name="Label" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer/Item3" index="1"]
+margin_left = 53.0
+margin_top = 15.0
+margin_right = 348.0
+margin_bottom = 29.0
+
+[node name="VBoxContainer2" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer" index="1"]
+margin_left = 428.0
+margin_right = 776.0
+margin_bottom = 138.0
+
+[node name="Item4" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="0"]
+margin_right = 348.0
+margin_bottom = 43.0
+
+[node name="mButton" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item4" index="0"]
+margin_right = 49.0
+margin_bottom = 43.0
+
+[node name="Label" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item4" index="1"]
+margin_left = 53.0
+margin_top = 14.0
+margin_right = 348.0
+margin_bottom = 28.0
+
+[node name="Item5" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="1"]
+margin_top = 47.0
+margin_right = 348.0
+margin_bottom = 90.0
+
+[node name="mButton" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item5" index="0"]
+margin_right = 49.0
+margin_bottom = 43.0
+
+[node name="Label" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item5" index="1"]
+margin_left = 53.0
+margin_top = 14.0
+margin_right = 348.0
+margin_bottom = 28.0
+
+[node name="Item6" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="2"]
+margin_top = 94.0
+margin_right = 348.0
+margin_bottom = 138.0
+
+[node name="mButton" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item6" index="0"]
+margin_right = 49.0
+margin_bottom = 44.0
+
+[node name="Label" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item6" index="1"]
+margin_left = 53.0
+margin_top = 15.0
+margin_right = 348.0
+margin_bottom = 29.0
+
+[node name="ActPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
+editor/display_folded = true
+visible = false
+margin_top = 8.0
+
+[node name="HBoxContainer" parent="VBoxContainer/MarginContainer2/Menu/ActPanel/MarginContainer" index="0"]
+margin_right = 876.0
+margin_bottom = 158.0
+
+[node name="Item4" parent="VBoxContainer/MarginContainer2/Menu/ActPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="0"]
+editor/display_folded = true
+
+[node name="Item5" parent="VBoxContainer/MarginContainer2/Menu/ActPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="1"]
+editor/display_folded = true
+
+[node name="Item6" parent="VBoxContainer/MarginContainer2/Menu/ActPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="2"]
+editor/display_folded = true
+
+[node name="ItemPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
+editor/display_folded = true
+visible = false
+margin_top = 8.0
+
+[node name="HBoxContainer" parent="VBoxContainer/MarginContainer2/Menu/ItemPanel/MarginContainer" index="0"]
+margin_right = 876.0
+margin_bottom = 158.0
+
+[node name="Item4" parent="VBoxContainer/MarginContainer2/Menu/ItemPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="0"]
+editor/display_folded = true
+
+[node name="Item5" parent="VBoxContainer/MarginContainer2/Menu/ItemPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="1"]
+editor/display_folded = true
+
+[node name="Item6" parent="VBoxContainer/MarginContainer2/Menu/ItemPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="2"]
+editor/display_folded = true
+
+[node name="MercyPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
+editor/display_folded = true
+visible = false
+margin_top = 8.0
+
+[node name="HBoxContainer" parent="VBoxContainer/MarginContainer2/Menu/MercyPanel/MarginContainer" index="0"]
+margin_right = 876.0
+margin_bottom = 158.0
+
+[node name="Item4" parent="VBoxContainer/MarginContainer2/Menu/MercyPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="0"]
+editor/display_folded = true
+
+[node name="Item5" parent="VBoxContainer/MarginContainer2/Menu/MercyPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="1"]
+editor/display_folded = true
+
+[node name="Item6" parent="VBoxContainer/MarginContainer2/Menu/MercyPanel/MarginContainer/HBoxContainer/VBoxContainer2" index="2"]
+editor/display_folded = true
+
+[node name="Dialogo" type="Tabs" parent="VBoxContainer/MarginContainer2/Menu"]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 8.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer2/Menu/Dialogo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer2/Menu/Dialogo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 100
+custom_constants/margin_top = 20
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 20
+
+[node name="GridContainer4" type="VBoxContainer" parent="VBoxContainer/MarginContainer2/Menu/Dialogo/MarginContainer"]
+margin_left = 100.0
+margin_top = 20.0
+margin_right = 876.0
+margin_bottom = 158.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/Menu/Dialogo/MarginContainer/GridContainer4"]
+margin_top = 5.0
+margin_right = 776.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "you wanna have a bad      t     o        m"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/Menu/Dialogo/MarginContainer/GridContainer4"]
+margin_top = 49.0
+margin_right = 776.0
+margin_bottom = 63.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "you wanna have a bad      t     o        m"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/Menu/Dialogo/MarginContainer/GridContainer4"]
+margin_top = 94.0
+margin_right = 776.0
+margin_bottom = 108.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = "you wanna have a bad      t     o        m"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_top = 457.0
+margin_top = 468.0
 margin_right = 1024.0
-margin_bottom = 507.0
+margin_bottom = 518.0
 rect_min_size = Vector2( 0, 50 )
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer"]
-margin_top = 10.0
-margin_right = 1014.0
+margin_right = 1024.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
 [node name="Player" type="MarginContainer" parent="MarginContainer/HBoxContainer3"]
-margin_right = 335.0
-margin_bottom = 40.0
+margin_right = 338.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer3/Player"]
-margin_right = 335.0
-margin_bottom = 40.0
+margin_right = 338.0
+margin_bottom = 50.0
 
 [node name="Name" type="Label" parent="MarginContainer/HBoxContainer3/Player/HBoxContainer"]
-margin_top = 13.0
-margin_right = 165.0
-margin_bottom = 27.0
+margin_top = 18.0
+margin_right = 167.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 text = "SANS"
 
 [node name="Level" type="Label" parent="MarginContainer/HBoxContainer3/Player/HBoxContainer"]
-margin_left = 169.0
-margin_top = 13.0
-margin_right = 335.0
-margin_bottom = 27.0
+margin_left = 171.0
+margin_top = 18.0
+margin_right = 338.0
+margin_bottom = 32.0
 size_flags_horizontal = 3
 text = "LV 1"
 
 [node name="HP" type="MarginContainer" parent="MarginContainer/HBoxContainer3"]
-margin_left = 339.0
-margin_right = 674.0
-margin_bottom = 40.0
+margin_left = 342.0
+margin_right = 680.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer3/HP"]
-margin_right = 335.0
-margin_bottom = 40.0
-script = ExtResource( 1 )
+margin_right = 338.0
+margin_bottom = 50.0
+script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer3/HP/HBoxContainer"]
-margin_top = 13.0
+margin_top = 18.0
 margin_right = 18.0
-margin_bottom = 27.0
+margin_bottom = 32.0
 text = "HP"
 
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer3/HP/HBoxContainer"]
 margin_left = 22.0
-margin_top = 19.0
-margin_right = 294.0
-margin_bottom = 21.0
+margin_top = 15.0
+margin_right = 297.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 3
 size_flags_vertical = 4
 max_value = 20.0
 percent_visible = false
 
 [node name="Number" type="Label" parent="MarginContainer/HBoxContainer3/HP/HBoxContainer"]
-margin_left = 298.0
-margin_top = 13.0
-margin_right = 335.0
-margin_bottom = 27.0
+margin_left = 301.0
+margin_top = 18.0
+margin_right = 338.0
+margin_bottom = 32.0
 text = "	20/20"
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer3"]
-margin_left = 678.0
-margin_right = 1014.0
-margin_bottom = 40.0
+margin_left = 684.0
+margin_right = 1024.0
+margin_bottom = 50.0
 size_flags_horizontal = 3
+custom_styles/separator = SubResource( 1 )
 
-[node name="Bottons" type="HBoxContainer" parent="."]
-margin_top = 511.0
+[node name="Buttons" type="HBoxContainer" parent="."]
+margin_top = 522.0
 margin_right = 1024.0
 margin_bottom = 600.0
+rect_min_size = Vector2( 0, 42 )
+size_flags_vertical = 7
+custom_constants/separation = 0
+
+[node name="FightButton" type="TextureButton" parent="Buttons"]
+margin_right = 186.0
+margin_bottom = 78.0
+mouse_filter = 2
 size_flags_horizontal = 3
-size_flags_vertical = 3
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 5 )
+texture_disabled = ExtResource( 5 )
+texture_focused = ExtResource( 6 )
+expand = true
+stretch_mode = 4
 
-[node name="Button" type="Button" parent="Bottons"]
-margin_right = 200.0
-margin_bottom = 89.0
-rect_min_size = Vector2( 200, 0 )
-
-[node name="VSeparator" type="VSeparator" parent="Bottons"]
-margin_left = 204.0
-margin_right = 270.0
-margin_bottom = 89.0
+[node name="VSeparator" type="VSeparator" parent="Buttons"]
+margin_left = 186.0
+margin_right = 279.0
+margin_bottom = 78.0
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+custom_styles/separator = SubResource( 2 )
 
-[node name="Button2" type="Button" parent="Bottons"]
-margin_left = 274.0
-margin_right = 474.0
-margin_bottom = 89.0
-rect_min_size = Vector2( 200, 0 )
-
-[node name="VSeparator2" type="VSeparator" parent="Bottons"]
-margin_left = 478.0
-margin_right = 545.0
-margin_bottom = 89.0
+[node name="ActButton" type="TextureButton" parent="Buttons"]
+margin_left = 279.0
+margin_right = 465.0
+margin_bottom = 78.0
+mouse_filter = 2
 size_flags_horizontal = 3
+toggle_mode = true
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 8 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 9 )
+expand = true
+stretch_mode = 4
 
-[node name="Button3" type="Button" parent="Bottons"]
-margin_left = 549.0
-margin_right = 749.0
-margin_bottom = 89.0
-rect_min_size = Vector2( 200, 0 )
-
-[node name="VSeparator3" type="VSeparator" parent="Bottons"]
-margin_left = 753.0
-margin_right = 819.0
-margin_bottom = 89.0
+[node name="VSeparator2" type="VSeparator" parent="Buttons"]
+margin_left = 465.0
+margin_right = 558.0
+margin_bottom = 3.0
 size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.5
+custom_styles/separator = SubResource( 3 )
 
-[node name="Button4" type="Button" parent="Bottons"]
-margin_left = 823.0
-margin_right = 1023.0
-margin_bottom = 89.0
-rect_min_size = Vector2( 200, 0 )
+[node name="ItemButton" type="TextureButton" parent="Buttons"]
+margin_left = 558.0
+margin_right = 744.0
+margin_bottom = 78.0
+mouse_filter = 2
+size_flags_horizontal = 3
+toggle_mode = true
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 11 )
+texture_disabled = ExtResource( 11 )
+texture_focused = ExtResource( 12 )
+expand = true
+stretch_mode = 4
+
+[node name="VSeparator3" type="VSeparator" parent="Buttons"]
+margin_left = 744.0
+margin_right = 837.0
+margin_bottom = 3.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.5
+custom_styles/separator = SubResource( 4 )
+
+[node name="MercyButton" type="TextureButton" parent="Buttons"]
+margin_left = 837.0
+margin_right = 1024.0
+margin_bottom = 78.0
+mouse_filter = 2
+size_flags_horizontal = 3
+toggle_mode = true
+texture_normal = ExtResource( 13 )
+texture_pressed = ExtResource( 14 )
+texture_disabled = ExtResource( 14 )
+texture_focused = ExtResource( 15 )
+expand = true
+stretch_mode = 4
+[connection signal="pressed" from="Buttons/FightButton" to="VBoxContainer/MarginContainer2/Menu" method="_on_FightButton_pressed"]
+[connection signal="pressed" from="Buttons/ActButton" to="VBoxContainer/MarginContainer2/Menu" method="_on_ActButton_pressed"]
+[connection signal="pressed" from="Buttons/ItemButton" to="VBoxContainer/MarginContainer2/Menu" method="_on_ItemButton_pressed"]
+[connection signal="pressed" from="Buttons/MercyButton" to="VBoxContainer/MarginContainer2/Menu" method="_on_MercyButton_pressed"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/FightPanel"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer/Item1"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer/Item2"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer/Item3"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item4"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item5"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item6"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/ActPanel"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/ActPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item4"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/ActPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item5"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/ActPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item6"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/ItemPanel"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/ItemPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item4"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/ItemPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item5"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/ItemPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item6"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/MercyPanel"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/MercyPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item4"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/MercyPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item5"]
+
+[editable path="VBoxContainer/MarginContainer2/Menu/MercyPanel/MarginContainer/HBoxContainer/VBoxContainer2/Item6"]
