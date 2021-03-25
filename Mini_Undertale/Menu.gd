@@ -9,6 +9,7 @@ onready var mercy_button = get_parent().get_parent().get_parent().get_node("Butt
 
 onready var buttons = [fight_button, act_button, item_button, mercy_button]
 
+signal player_turn_ended()
 
 func _ready():
 	fight_button.grab_focus() 
@@ -26,6 +27,7 @@ func _ready():
 	
 func _process(delta):
 	focus_control()
+	turn_control()
 	
 
 func focus_first_item():
@@ -51,7 +53,7 @@ func _on_MercyButton_pressed():
 	set_current_tab(3)
 	focus_first_item()
 	in_menu_mode(true)
-	
+
 #control de focus
 #estando en modo menu, revisa si se presiono escape y regresa el focus al boton que se presiono antes
 func focus_control():
@@ -75,6 +77,28 @@ func focus_control():
 		in_menu_mode(false)
 		mercy_button.set_pressed(false)
 		mercy_button.grab_focus()
+		
+#estando en modo menu, revisa si se presiono enter, da una respuesta acorde a la seleccion y pasa al turno del enemigo
+func turn_control():
+	
+	if Input.is_action_just_pressed("ui_accept"):
+	#Itera sobre todos los botones (los hijos del nodo Buttons
+		for button in fight_button.get_parent().get_children():
+			#Verifica que no sea un separador
+			if 'Button' in button.name:
+				if button.is_pressed():
+					#Verifica cual opcion estaba seleccionada y haz algo acorde (p.e cambiar el dialogo)
+					#WIP
+					#aiuda no c como cambiar el dialogo
+					
+					in_menu_mode(false)
+					yield(get_tree().create_timer(2.0),"timeout")
+					
+					#Empieza el turno del enemigo
+					visible = false
+					emit_signal("player_turn_ended")
+
+	
 
 
 func in_menu_mode(value: bool):
