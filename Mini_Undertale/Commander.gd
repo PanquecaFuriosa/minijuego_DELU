@@ -13,17 +13,17 @@ onready var Spawner1 :Position2D = $'Spawner1'
 onready var Turntimer :Timer = $"../TurnTimer"
 
 func _ready():
-	
+	pass
 	#This should run when a signal is received (the signal from the player ending its turn)
 	
 	
 	#Move spawners if necessary.
-	Spawner1.position = Vector2(640,256)
+	#Spawner1.position = Vector2(640,256)
 	#Start a timer for the duration of the enemies' turn (when turns are implemented)
 	#.. And start firing (you can edit and create shoot patterns btw)
 	
-	Shoot_Pattern1(Projectile1,Spawner0, 1)
-	Shoot_Pattern1(Projectile1,Spawner1, 0.5)
+	#Shoot_Pattern1(Projectile1,Spawner0, 1)
+	#Shoot_Pattern1(Projectile1,Spawner1, 0.5)
 
 #Just shoot them projectiles downwards
 func Shoot_Pattern1(what :PackedScene, where: Position2D, reload_time :float, direction: float = 180):

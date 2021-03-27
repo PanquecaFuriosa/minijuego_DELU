@@ -5,6 +5,7 @@ onready var scene = get_node('/root/Fightscene')
 func Fire(projectile, direction = -90):
 	#Instancing the projectile
 	var proj = projectile.instance()
+	proj.name = 'projectile'
 	scene.add_child(proj)
 	
 	#Setting position

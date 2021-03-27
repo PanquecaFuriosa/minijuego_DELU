@@ -24,7 +24,10 @@ func _ready():
 	add_option("un peluche", "item")
 	add_option("there is no mercy", "mercy")
 	
-	
+func at_player_turn_start():
+	in_menu_mode(false)
+	fight_button.grab_focus()
+
 func _process(delta):
 	focus_control()
 	turn_control()

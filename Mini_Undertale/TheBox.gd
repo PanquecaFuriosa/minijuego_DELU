@@ -23,7 +23,8 @@ onready var labelsMargin = labels.rect_position.y - MARGIN_TEMP
 #Esto toma la mitad del ancho del contenedor ya mencionado
 onready var labelsCenter = labels.rect_size.x/2
 
-#Escala que debe tomar la caja al inicio (mientras no cambien su tamaño en la escena)
+#Tiempo que tarda en escalar
+export(float) var scale_time :float =1.0
 
 #centra la caja y al jugador  en la posicion inicial
 func centerBox():
@@ -36,11 +37,6 @@ func _ready():
 	centerBox()
 	scaleSize(432, 64)
 
-	get_parent().get_node("GUI/VBoxContainer/MarginContainer2/Menu").connect("player_turn_ended",self,"Start_Enemy_Turn")
-	
-	
-	
-
 func scaleWidth(pixels):
 	#escala la caja aumentandole la cantidad de pixeles 
 	#a la derecha y a la izquierda a la vez
@@ -48,7 +44,7 @@ func scaleWidth(pixels):
 	#lo de arriba lo calcule con una regla de tres
 	
 	var current_y = scale.y
-	tweenNode.interpolate_property(self, "scale", scale, Vector2(new_scale,current_y), 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tweenNode.interpolate_property(self, "scale", scale, Vector2(new_scale,current_y), scale_time, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	tweenNode.start()
 	
 
@@ -60,7 +56,7 @@ func scaleHeight(pixels):
 	
 	var current_x = scale.x
 	tweenNode.interpolate_property(
-		self, "scale", scale, Vector2(current_x, new_scale), 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN
+		self, "scale", scale, Vector2(current_x, new_scale), scale_time, Tween.TRANS_LINEAR, Tween.EASE_IN
 	)
 	tweenNode.start()
 	fix_height(new_scale)
@@ -71,7 +67,6 @@ func scaleHeight(pixels):
 #Para cambiar escala en todas las direcciones, ya que las 2 anteriores pueden no funcionar si se llama una justo despues de la otra.
 func scaleSize(width = 0, height = 0):
 	scaleWidth(width)
-	#yield(get_tree().create_timer(0.5),"timeout")
 	yield(tweenNode,"tween_completed")
 	scaleHeight(height)
 	
@@ -86,8 +81,4 @@ func fix_height(new_scale):
 	if h_total_box - labelsMargin > 0:
 		tweenNode.interpolate_property(self, "position", position, Vector2(position.x, labelsMargin - ((new_scale * spriteHeight)/2)) , 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		tweenNode.start()
-		
-func Start_Enemy_Turn():
-	scaleWidth(-384)
-	
 
