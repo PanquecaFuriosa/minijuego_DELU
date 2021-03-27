@@ -10,6 +10,7 @@ export (PackedScene) var Projectile1 :PackedScene
 #No hay que usarlos todos al mismo tiempo.
 onready var Spawner0 :Position2D = $'Spawner0'
 onready var Spawner1 :Position2D = $'Spawner1'
+onready var Turntimer :Timer = $"../TurnTimer"
 
 func _ready():
 	
@@ -27,11 +28,9 @@ func _ready():
 #Just shoot them projectiles downwards
 func Shoot_Pattern1(what :PackedScene, where: Position2D, reload_time :float, direction: float = 180):
 	
-		
-	#Keep the loop as long as the turn timer isn't stopped (when turns are implemented)
-	#But for now there's no stopping it B) 
+	#Keep the loop as long as the turn timer isn't stopped 
 	
-	while true:
+	while Turntimer.time_left > 0:
 		where.Fire(what,direction)
 		yield(get_tree().create_timer(reload_time),"timeout")
 		

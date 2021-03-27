@@ -89,7 +89,7 @@ func turn_control():
 			#Da un tiempo para leer el dialogo
 			yield(get_tree().create_timer(2.0),"timeout")
 			#Empieza el turno del enemigo
-			visible = false
+			#visible = false
 			emit_signal("player_turn_ended")
 			
 			
