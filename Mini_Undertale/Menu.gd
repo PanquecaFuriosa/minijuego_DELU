@@ -82,6 +82,19 @@ func focus_control():
 func turn_control():
 	
 	if Input.is_action_just_pressed("ui_accept"):
+		#Verifica si se selecionó alguna de las opciones dentro de Act/Item/Mercy o si se presionó un botón para atacar
+		if get_current_tab() != 4:
+			#Vuelve al dialogo principal
+			in_menu_mode(false)
+			#Da un tiempo para leer el dialogo
+			yield(get_tree().create_timer(2.0),"timeout")
+			#Empieza el turno del enemigo
+			visible = false
+			emit_signal("player_turn_ended")
+			
+			
+		"""
+	Esta es la herejía que tenía antes, por si sirve de algo, si no sirve, quemenla xddd
 	#Itera sobre todos los botones (los hijos del nodo Buttons
 		for button in fight_button.get_parent().get_children():
 			#Verifica que no sea un separador
@@ -97,7 +110,7 @@ func turn_control():
 					#Empieza el turno del enemigo
 					visible = false
 					emit_signal("player_turn_ended")
-
+		"""
 	
 
 
