@@ -1,0 +1,171 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Fonts/8-BIT WONDER.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/background game over.jpg" type="Texture" id=2]
+[ext_resource path="res://Fonts/PixelOperatorMono8.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprites/Corazon.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Corazon roto.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Mensaje2.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Corazon"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Corazon roto"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 110
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=4]
+
+[sub_resource type="Animation" id=5]
+resource_name = "Mensaje1"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7, 7.1, 7.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.945098, 0.945098, 0.945098, 0 ), Color( 0.945098, 0.945098, 0.945098, 0.0392157 ), Color( 0.945098, 0.945098, 0.945098, 0.0784314 ), Color( 0.945098, 0.945098, 0.945098, 0.117647 ), Color( 0.945098, 0.945098, 0.945098, 0.156863 ), Color( 0.945098, 0.945098, 0.945098, 0.235294 ), Color( 0.945098, 0.945098, 0.945098, 0.27451 ), Color( 0.945098, 0.945098, 0.945098, 0.313726 ), Color( 0.945098, 0.945098, 0.945098, 0.352941 ), Color( 0.945098, 0.945098, 0.945098, 0.392157 ), Color( 0.945098, 0.945098, 0.945098, 0.431373 ), Color( 0.945098, 0.945098, 0.945098, 0.470588 ), Color( 0.945098, 0.945098, 0.945098, 0.509804 ), Color( 0.945098, 0.945098, 0.945098, 0.588235 ), Color( 0.945098, 0.945098, 0.945098, 0.627451 ), Color( 0.945098, 0.945098, 0.945098, 0.666667 ), Color( 0.945098, 0.945098, 0.945098, 0.705882 ), Color( 0.945098, 0.945098, 0.945098, 0.745098 ), Color( 0.945098, 0.945098, 0.945098, 0.784314 ), Color( 0.945098, 0.945098, 0.945098, 0.862745 ), Color( 0.945098, 0.945098, 0.945098, 0.823529 ), Color( 0.945098, 0.945098, 0.945098, 0.901961 ), Color( 0.945098, 0.945098, 0.945098, 0.980392 ), Color( 0.945098, 0.945098, 0.945098, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=7]
+resource_name = "Mensaje2"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 10, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9, 11, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 12, 12.1, 12.2, 12.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "You cannot give
+up just yet...", "Heart!
+Stay determined..." ]
+}
+
+[node name="GameOver" type="Node2D"]
+position = Vector2( 510, 300 )
+script = ExtResource( 8 )
+
+[node name="background game over" type="Sprite" parent="."]
+position = Vector2( 1.49826, 1.49829 )
+scale = Vector2( 0.754763, 0.66239 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Corazon" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 70 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Corazon"]
+autoplay = "Corazon"
+anims/Corazon = SubResource( 1 )
+
+[node name="Corazon roto" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, 70 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Corazon roto"]
+autoplay = "Corazon roto"
+"anims/Corazon roto" = SubResource( 2 )
+
+[node name="Mensaje1" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -502.636
+margin_top = -295.996
+margin_right = 509.364
+margin_bottom = -67.9955
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 0.945098, 0.945098, 1 )
+text = "GAME
+OVER"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mensaje1"]
+autoplay = "Mensaje1"
+anims/AnimacionCorazon = SubResource( 4 )
+anims/Mensaje1 = SubResource( 5 )
+
+[node name="Mensaje2" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -228.0
+margin_top = 110.0
+margin_right = 508.0
+margin_bottom = 298.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.945098, 0.945098, 0.945098, 1 )
+text = "You cannot give
+up just yet..."
+percent_visible = 0.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mensaje2"]
+anims/Mensaje2 = SubResource( 7 )
