@@ -9,6 +9,9 @@ margin_left = 4.0
 margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
@@ -44,7 +47,6 @@ margin_right = 368.0
 focus_neighbour_right = NodePath("../../../VBoxContainer2/Item4/mButton")
 
 [node name="Item2" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
-editor/display_folded = true
 margin_left = 0.0
 margin_top = 176.0
 margin_right = 368.0
@@ -54,7 +56,6 @@ margin_bottom = 348.0
 focus_neighbour_right = NodePath("../../../VBoxContainer2/Item5/mButton")
 
 [node name="Item3" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
-editor/display_folded = true
 margin_left = 0.0
 margin_top = 352.0
 margin_right = 368.0

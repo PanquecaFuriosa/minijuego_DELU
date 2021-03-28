@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/PC Computer - Undertale - Ruins.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Puertas.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Puerta (1).png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Puerta (2).png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Escaleras.jpg" type="Texture" id=5]
 
 [sub_resource type="TileSet" id=1]
 0/name = "PC Computer - Undertale - Ruins.png 0"
@@ -35,87 +38,126 @@ format = 1
 tile_data = PoolIntArray( 0, 0, 0 )
 
 [node name="Puerta 1" type="Area2D" parent="."]
-position = Vector2( 510, 115 )
-__meta__ = {
-"_edit_group_": true
-}
+light_mask = 16
+position = Vector2( 516.174, 117.806 )
+collision_layer = 16
+collision_mask = 2147483650
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 1"]
 shape = SubResource( 2 )
 
 [node name="Puerta 2" type="Area2D" parent="."]
+light_mask = 16
 position = Vector2( 860, 520 )
-__meta__ = {
-"_edit_group_": true
-}
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 2"]
+visible = false
 shape = SubResource( 3 )
 
 [node name="Puerta 3" type="Area2D" parent="."]
+light_mask = 16
 position = Vector2( 160, 520 )
-__meta__ = {
-"_edit_group_": true
-}
+collision_layer = 32
+collision_mask = 2147483650
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 3"]
+visible = false
 shape = SubResource( 3 )
 
 [node name="Puerta 4" type="Area2D" parent="."]
-position = Vector2( 125, 150 )
+position = Vector2( 124.439, 152.806 )
 rotation = -0.820305
-__meta__ = {
-"_edit_group_": true
-}
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 4"]
+visible = false
 shape = SubResource( 2 )
+
+[node name="Puerta (2)" type="Sprite" parent="Puerta 4"]
+position = Vector2( 10.4396, -28.1102 )
+rotation = 0.820305
+scale = Vector2( 2, 3.5 )
+texture = ExtResource( 4 )
 
 [node name="Puerta 5" type="Area2D" parent="."]
 position = Vector2( 900, 150 )
 rotation = 0.820305
-__meta__ = {
-"_edit_group_": true
-}
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 5"]
+visible = false
 shape = SubResource( 2 )
+
+[node name="Puerta (1)" type="Sprite" parent="Puerta 5"]
+position = Vector2( -13.8879, -23.9979 )
+rotation = -0.820305
+scale = Vector2( 2.14402, 3.41239 )
+texture = ExtResource( 3 )
 
 [node name="Puerta 6" type="Area2D" parent="."]
-position = Vector2( 750, 550 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 747.753, 537.264 )
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 6"]
+visible = false
+position = Vector2( 0.749146, -2.99664 )
 shape = SubResource( 2 )
+
+[node name="Escaleras" type="Sprite" parent="Puerta 6"]
+position = Vector2( 0, 10 )
+scale = Vector2( 2.3, 1.3 )
+texture = ExtResource( 5 )
 
 [node name="Puerta 7" type="Area2D" parent="."]
-position = Vector2( 270, 550 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 254.268, 548.502 )
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 7"]
+visible = false
+position = Vector2( -0.749146, -14.2339 )
 shape = SubResource( 2 )
 
+[node name="Escaleras" type="Sprite" parent="Puerta 7"]
+position = Vector2( 0, -2.7356 )
+scale = Vector2( 2.3, 1.3 )
+texture = ExtResource( 5 )
+
 [node name="Puerta 8" type="Area2D" parent="."]
-position = Vector2( 645, 335 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 635.5, 334 )
+collision_layer = 16
+collision_mask = 2
+
+[node name="Escaleras" type="Sprite" parent="Puerta 8"]
+position = Vector2( 37.91, -24.0673 )
+rotation = 1.5708
+scale = Vector2( 2, 1.7 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 8"]
+visible = false
+position = Vector2( 14, -24.5 )
 shape = SubResource( 3 )
 
 [node name="Puerta 9" type="Area2D" parent="."]
-position = Vector2( 375, 335 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 375, 311.428 )
+collision_layer = 2147483664
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 9"]
+visible = false
 shape = SubResource( 3 )
+
+[node name="Escaleras2" type="Sprite" parent="Puerta 9"]
+position = Vector2( -24.2678, -1.51483 )
+rotation = 1.5708
+scale = Vector2( 2.00642, 1.69991 )
+texture = ExtResource( 5 )
 [connection signal="body_entered" from="Puerta 1" to="." method="_on_Puerta_1_body_entered"]
 [connection signal="body_entered" from="Puerta 2" to="." method="_on_Puerta_2_body_entered"]
 [connection signal="body_entered" from="Puerta 3" to="." method="_on_Puerta_3_body_entered"]

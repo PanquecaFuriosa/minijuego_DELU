@@ -74,6 +74,8 @@ fire={
 2d_physics/layer_3="enemy"
 2d_render/layer_4="enemy projectile"
 2d_physics/layer_4="enemy projectile"
+2d_render/layer_5="puerta"
+2d_physics/layer_5="puerta"
 
 [rendering]
 

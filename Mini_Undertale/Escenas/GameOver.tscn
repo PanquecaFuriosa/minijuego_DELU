@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Fonts/8-BIT WONDER.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Sprites/background game over.jpg" type="Texture" id=2]
-[ext_resource path="res://Fonts/PixelOperatorMono8.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Fonts/PixelOperatorMono-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Sprites/Corazon.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Corazon roto.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Mensaje2.gd" type="Script" id=6]
@@ -62,8 +62,9 @@ tracks/0/keys = {
 }
 
 [sub_resource type="DynamicFont" id=6]
-size = 25
+size = 40
 use_filter = true
+extra_spacing_char = 6
 font_data = ExtResource( 3 )
 
 [sub_resource type="Animation" id=7]
@@ -159,9 +160,9 @@ margin_right = 508.0
 margin_bottom = 298.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0.945098, 0.945098, 0.945098, 1 )
-text = "You cannot give
-up just yet..."
-percent_visible = 0.0
+text = "Heart!
+Stay determined..."
+percent_visible = 0.958333
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
