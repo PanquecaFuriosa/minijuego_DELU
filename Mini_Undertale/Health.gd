@@ -1,4 +1,5 @@
 extends Node2D
+signal die()
 
 onready var player = get_parent()
 var max_hp :int = PlayerVariables.max_hp
@@ -27,3 +28,4 @@ func Die():
 	player.get_node("Movement").set_physics_process(false)
 	
 	#Aqui seria la transicion a la escena GAME OVER
+	emit_signal("die")

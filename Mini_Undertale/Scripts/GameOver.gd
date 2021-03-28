@@ -39,10 +39,14 @@ func _process(delta):
 	elif invisible and seg >= 2:
 		instanciar(trozo1, trozo2, trozo3)
 		instanciar(trozo4, trozo5, trozo6)
-		self.get_child(5).apply_impulse(Vector2(0, 650), Vector2(-80, -150))
-		self.get_child(6).apply_impulse(Vector2(0, 65), Vector2(-120, -200))
-		self.get_child(7).apply_impulse(Vector2(0, 65), Vector2(-160, -170))
-		self.get_child(8).apply_impulse(Vector2(0, 65), Vector2(100, -180))
-		self.get_child(9).apply_impulse(Vector2(0, 65), Vector2(130, -190))
-		self.get_child(10).apply_impulse(Vector2(0, 65), Vector2(150, -170))
+		self.get_child(5).apply_impulse(Vector2(0, 650), Vector2(-60, -100))
+		self.get_child(6).apply_impulse(Vector2(0, 65), Vector2(-80, -150))
+		self.get_child(7).apply_impulse(Vector2(0, 65), Vector2(-120, -120))
+		self.get_child(8).apply_impulse(Vector2(0, 65), Vector2(60, -120))
+		self.get_child(9).apply_impulse(Vector2(0, 65), Vector2(90, -130))
+		self.get_child(10).apply_impulse(Vector2(0, 65), Vector2(100, -130))
 		invisible = false
+	
+	elif not(invisible) and seg >= 2 and seg < 10:
+		seg += delta
+	
