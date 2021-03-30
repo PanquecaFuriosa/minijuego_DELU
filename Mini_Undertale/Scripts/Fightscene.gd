@@ -1,4 +1,5 @@
 extends Node2D
+export (PackedScene) var game_over
 
 onready var GUI_Box = $'GUI/VBoxContainer/MarginContainer2'
 onready var GUI_Menu = GUI_Box.get_node('Menu')
@@ -17,7 +18,7 @@ onready var Commander = $'Commander'
 
 
 func _ready():
-	
+
 	GUI_Menu.connect('player_turn_ended',self,"Start_Enemy_Turn")
 
 
@@ -56,4 +57,8 @@ func Start_Player_Turn():
 	#Habilitar GUI y aparecerla
 	GUI_Box.visible = true
 	GUI_Menu.at_player_turn_start()
+
+func game_over():
+	get_tree().change_scene_to(game_over)
+
 

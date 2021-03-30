@@ -1,5 +1,4 @@
 extends KinematicBody2D
-signal game_over()
 
 onready var Hitbox = $'CollisionShape2D'
 
@@ -10,4 +9,4 @@ func _ready():
 	Movement.speed =speed
 
 func _on_Health_die():
-	emit_signal("game_over")
+	get_parent().game_over()

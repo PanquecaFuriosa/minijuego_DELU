@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/background game over.jpg" type="Texture" id=1]
+
+[node name="Fondo" type="Node2D"]
+
+[node name="background game over" type="Sprite" parent="."]
+position = Vector2( 515.235, 316.366 )
+scale = Vector2( 0.772103, 0.692019 )
+texture = ExtResource( 1 )
