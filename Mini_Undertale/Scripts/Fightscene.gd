@@ -4,7 +4,6 @@ export (PackedScene) var game_over
 onready var GUI_Box = $'GUI/VBoxContainer/MarginContainer2'
 onready var GUI_Menu = GUI_Box.get_node('Menu')
 onready var GUI
-
 onready var Box = $'TheBox'
 export (float) var box_scale :float = -352
 

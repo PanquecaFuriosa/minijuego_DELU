@@ -6,9 +6,8 @@ signal menu_button_pressed
 
 func any_button_pressed(): #funcion para ejecutarla al presionar cualquiera
 	emit_signal("menu_button_pressed") #de los botones de los paneles, si se extiende en otro panel
-	                                   #se puede personalizar como en SelectEnemy
+									   #se puede personalizar como en SelectEnemy
 	
-
 func button1_pressed():
 	print("aduete")
 	any_button_pressed()

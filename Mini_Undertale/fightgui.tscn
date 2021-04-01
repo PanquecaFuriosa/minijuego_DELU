@@ -67,7 +67,6 @@ tabs_visible = false
 script = ExtResource( 1 )
 
 [node name="FightPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
-editor/display_folded = true
 margin_top = 8.0
 
 [node name="HBoxContainer" parent="VBoxContainer/MarginContainer2/Menu/FightPanel/MarginContainer" index="0"]
@@ -279,7 +278,6 @@ margin_right = 348.0
 margin_bottom = 29.0
 
 [node name="ItemPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
-editor/display_folded = true
 visible = false
 margin_top = 8.0
 
@@ -288,7 +286,6 @@ margin_right = 876.0
 margin_bottom = 158.0
 
 [node name="MercyPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
-editor/display_folded = true
 visible = false
 margin_top = 8.0
 
@@ -297,7 +294,6 @@ margin_right = 876.0
 margin_bottom = 158.0
 
 [node name="Dialogo" type="Tabs" parent="VBoxContainer/MarginContainer2/Menu"]
-editor/display_folded = true
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -377,12 +373,12 @@ text = "LV 1"
 
 [node name="HP" type="MarginContainer" parent="MarginContainer/HBoxContainer3"]
 margin_left = 342.0
-margin_right = 680.0
+margin_right = 681.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer3/HP"]
-margin_right = 338.0
+margin_right = 339.0
 margin_bottom = 50.0
 script = ExtResource( 6 )
 
@@ -395,7 +391,7 @@ text = "HP"
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer3/HP/HBoxContainer"]
 margin_left = 22.0
 margin_top = 15.0
-margin_right = 297.0
+margin_right = 298.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 3
@@ -404,14 +400,14 @@ max_value = 20.0
 percent_visible = false
 
 [node name="Number" type="Label" parent="MarginContainer/HBoxContainer3/HP/HBoxContainer"]
-margin_left = 301.0
+margin_left = 302.0
 margin_top = 18.0
-margin_right = 338.0
+margin_right = 339.0
 margin_bottom = 32.0
 text = "	20/20"
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer3"]
-margin_left = 684.0
+margin_left = 685.0
 margin_right = 1024.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
