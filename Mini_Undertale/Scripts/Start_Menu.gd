@@ -1,7 +1,7 @@
 extends Node2D
 
-onready var world_button = $"VBoxContainer/VBoxContainer/Go to World/mButton"
-onready var battle_button = $"VBoxContainer/VBoxContainer/Start Battle/mButton"
+onready var world_button = $"VBoxContainer/HBoxContainer/VBoxContainer/Go to World/mButton"
+onready var battle_button = $"VBoxContainer/HBoxContainer/VBoxContainer/Start Battle/mButton"
 
 
 # Called when the node enters the scene tree for the first time.
