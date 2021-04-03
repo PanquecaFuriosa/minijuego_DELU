@@ -6,7 +6,7 @@ var corazon: Node2D
 var fondo: Node2D
 var mueve_corazon = false
 var velocidad_corazon: Vector2
-var rapidez_corazon = 600
+export var rapidez_corazon = 1000
 
 #Cambio de escena a la de batalla
 func _on_Puertas_cambia_scena(valor):
@@ -20,9 +20,10 @@ func _on_Puertas_cambia_scena(valor):
 	
 	
 func _process(delta):
-	if mueve_corazon and not(corazon.position.y > 555 and corazon.position.y < 565 and corazon.position.x < 29 and corazon.position.x > 21):
-		velocidad_corazon = Vector2(26, 560) - get_child(3).position
+	#Este es el movimiento del corazon en la transicion a la batalla
+	if mueve_corazon and not(corazon.position.y > 550 and corazon.position.y < 570 and corazon.position.x < 34 and corazon.position.x > 16):
+		velocidad_corazon = Vector2(30, 560) - get_child(3).position
 		velocidad_corazon = velocidad_corazon.normalized()
 		get_child(3).translate(velocidad_corazon * delta * rapidez_corazon)
-	elif mueve_corazon and corazon.position.y > 555 and corazon.position.y < 565 and corazon.position.x < 29 and corazon.position.x > 21:
+	elif mueve_corazon and corazon.position.y > 550 and corazon.position.y < 570 and corazon.position.x < 34 and corazon.position.x > 16:
 		get_tree().change_scene_to(batalla)

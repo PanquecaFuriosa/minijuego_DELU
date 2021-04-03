@@ -23,10 +23,10 @@
 0/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 50, 10 )
+extents = Vector2( 13.9103, 12.4971 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 10, 40 )
+extents = Vector2( 6.5, 15.3012 )
 
 [node name="Puertas" type="Node2D"]
 script = ExtResource( 2 )
@@ -44,6 +44,8 @@ collision_layer = 16
 collision_mask = 2147483650
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 1"]
+visible = false
+position = Vector2( -5.65683, -4.24264 )
 shape = SubResource( 2 )
 
 [node name="Puerta 2" type="Area2D" parent="."]
@@ -54,6 +56,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 2"]
 visible = false
+position = Vector2( 4, -1 )
 shape = SubResource( 3 )
 
 [node name="Puerta 3" type="Area2D" parent="."]
@@ -64,6 +67,7 @@ collision_mask = 2147483650
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 3"]
 visible = false
+position = Vector2( -1.25992, 0 )
 shape = SubResource( 3 )
 
 [node name="Puerta 4" type="Area2D" parent="."]
@@ -74,6 +78,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 4"]
 visible = false
+position = Vector2( -32.4117, -6.85306 )
 shape = SubResource( 2 )
 
 [node name="Puerta (2)" type="Sprite" parent="Puerta 4"]
@@ -90,6 +95,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 5"]
 visible = false
+position = Vector2( 31.3729, -0.427745 )
 shape = SubResource( 2 )
 
 [node name="Puerta (1)" type="Sprite" parent="Puerta 5"]
@@ -105,7 +111,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 6"]
 visible = false
-position = Vector2( 0.749146, -2.99664 )
+position = Vector2( -1.37219, -4.05731 )
 shape = SubResource( 2 )
 
 [node name="Escaleras" type="Sprite" parent="Puerta 6"]
