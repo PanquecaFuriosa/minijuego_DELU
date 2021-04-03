@@ -107,3 +107,5 @@ margin_bottom = 600.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.9
 custom_styles/separator = SubResource( 5 )
+
+[node name="HeartMove" type="Tween" parent="."]
