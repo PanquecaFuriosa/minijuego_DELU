@@ -1,14 +1,56 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://MovingEntity.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player_movement.gd" type="Script" id=2]
 [ext_resource path="res://moving_entity.gd" type="Script" id=3]
 [ext_resource path="res://Health.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/Player1.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Player2.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/animacion_del_player/arriba1.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/animacion_del_player/derecha1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/animacion_del_player/defrente1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/animacion_del_player/defrente2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/animacion_del_player/arriba2.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/animacion_del_player/arriba4.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/animacion_del_player/defrente3.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/animacion_del_player/defrente4.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/animacion_del_player/izquierda1.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/animacion_del_player/izquierda2.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/animacion_del_player/derecha2.png" type="Texture" id=15]
 
 [sub_resource type="Animation" id=1]
-resource_name = "arriba"
+resource_name = "abajo"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 11 ), ExtResource( 12 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 10 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "derecha"
 length = 0.2
 loop = true
 tracks/0/type = "value"
@@ -21,11 +63,27 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 15 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "movimiento"
+[sub_resource type="Animation" id=4]
+resource_name = "izquierda"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 14 ) ]
+}
+
+[sub_resource type="Animation" id=5]
 
 [node name="Player" instance=ExtResource( 1 )]
 position = Vector2( 0.0869565, 1.87291 )
@@ -37,7 +95,7 @@ visible = false
 
 [node name="Sprite" parent="." index="1"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 5 )
+texture = ExtResource( 15 )
 
 [node name="Movement" parent="." index="2"]
 script = ExtResource( 2 )
@@ -46,6 +104,9 @@ script = ExtResource( 2 )
 script = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
-anims/arriba = SubResource( 1 )
-anims/movimiento = SubResource( 2 )
+anims/abajo = SubResource( 1 )
+anims/arriba = SubResource( 2 )
+anims/derecha = SubResource( 3 )
+anims/izquierda = SubResource( 4 )
+anims/movimiento = SubResource( 5 )
 [connection signal="die" from="Health" to="." method="_on_Health_die"]
