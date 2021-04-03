@@ -8,6 +8,9 @@ margin_left = 1.5
 margin_right = 369.5
 margin_bottom = 172.0
 size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="mButton" type="TextureButton" parent="."]
 margin_right = 52.0
