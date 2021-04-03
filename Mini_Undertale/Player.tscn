@@ -95,7 +95,7 @@ visible = false
 
 [node name="Sprite" parent="." index="1"]
 scale = Vector2( 3, 3 )
-texture = ExtResource( 15 )
+texture = ExtResource( 7 )
 
 [node name="Movement" parent="." index="2"]
 script = ExtResource( 2 )

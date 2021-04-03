@@ -191,6 +191,7 @@ func set_new_state(state_name, start_dialogs, interaction_dialogs, can_be_spared
 
 func play_state(state = {"start_dialogs": start_dialog, "interaction_dialogs": interaction_dialogs, "can_be_spared": can_be_spared}):
 
+
 	if state["start_dialogs"][0] != "current":
 		#set_start_dialogs(state.start_dialogs[rng.randi_range(0, len(state.start_dialogs) - 1)])
 		start_dialogs_stage = state["start_dialogs"] #almacena los dialogos del state del argumento para luego ser llamados aleatoriamente al comienzo del turno
