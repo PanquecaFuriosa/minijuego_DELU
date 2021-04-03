@@ -20,11 +20,14 @@ onready var buttons = [fight_button, act_button, item_button, mercy_button]
 
 var current_button_pressed #esto para guardar el ultimo boton presionado al entrar en el turno del enemigo
 var is_first_turn = true
+var fight_ended = false
 
+signal fight_ended()
 signal player_turn_ended()
 signal player_turn_started() #para enseñar el dialogo al inicio de turno
 
 func _ready():
+	panels["mercy"].connect("fight_ended", self, "end_fight")
 	fight_button.grab_focus() 
 	set_current_tab(4)
 	#escucha una señal que es transmitida por todos los botones de todos los paneles para terminar el turno en dicho momento
@@ -37,22 +40,28 @@ func _ready():
 	add_option("doctor pepper", "item", null)
 	add_option("the souls of the damned", "item", null)
 	add_option("un peluche", "item", null)
-	add_option("there is no mercy", "mercy", null)
+	#add_option("there is no mercy", "mercy", null)
 	add_option("nombre del enemigo", "selection", null)
+	#add_option("Flee", "mercy", null)
+	#add_option_in(2, 1, "mercy", "Spare", null)
 
 	#lo de abajo es el ejemplo de agregar opciones con sus respectivas respuestas en el panel de act una por una
-	"""
-	add_option("check", "act", "happy waifu, happy laifu")
-	add_option("my name is giovanni giorgio", "act", "but everybody calls me, giorgio")
-	add_option("aduete", "act", "aduduaduaduaete")
-	add_option("wake me up", "act", "wake me up inside")
-	add_option("peace was never an option", "act", "el caballo se llamaba viernes")
-	"""
+	
+#	add_option("check", "act", "happy waifu, happy laifu")
+#	add_option("my name is giovanni giorgio", "act", "but everybody calls me, giorgio")
+#	add_option("aduete", "act", "aduduaduaduaete")
+#	add_option("wake me up", "act", "wake me up inside")
+#	add_option("peace was never an option", "act", "el caballo se llamaba viernes")
+#
 	#y este es el ejemplo de agregarlas todas de una sola vez
+#	add_option_page(
+#		["check", "my name is giovanni giorgio", "aduete", "wake me up", "peace was never an option"], #primero las opciones
+#		["happy waifu, happy laifu", "but everybody calls me, giorgio", "aduduaduaduaete", "wake me up inside", "el caballo se llamaba viernes"], #luego las respuestas al presionar cada opcion
+#		"act") #y el panel
+#	add_option_in(2, 1, "act", "when I was", "a young boy") 
 	add_option_page(
-		["check", "my name is giovanni giorgio", "aduete", "wake me up", "peace was never an option"], #primero las opciones
-		["happy waifu, happy laifu", "but everybody calls me, giorgio", "aduduaduaduaete", "wake me up inside", "el caballo se llamaba viernes"], #luego las respuestas al presionar cada opcion
-		"act") #y el panel
+		["Check", "Imitate", "Flirt"] , ["Life is difficult for this enemy.Stereotypical: Curvaceously attractive, but no brains...", "You lie immobile with Moldsmal. You feel like you understand the world a little better.", "You wiggle your hips. Moldsmal wiggles back. What a meaningful conversation!"], "act"
+	)
 
 func at_player_turn_start():
 	in_menu_mode(false) #al inicio del turno quita el modo menu y regresa el focus al boton presionado en el turno anterior y emite la funcion de comienzo de turno  para que se muestre el dialogo de ese comienzo
@@ -62,6 +71,10 @@ func at_player_turn_start():
 		current_button_pressed.grab_focus()
 	emit_signal("player_turn_started")
 	
+func end_fight():
+	emit_signal("fight_ended")
+	fight_ended = true
+
 func _process(delta):
 	focus_control()
 	
@@ -86,7 +99,8 @@ func change_tab(tab): #ahora no hay que poner numeritos :D
 		"selection":
 			tab = 5
 	set_current_tab(tab)
-	focus_first_item()
+	if tab != 4:
+		focus_first_item()
 	in_menu_mode(true)
 	
 func _on_FightButton_pressed():
@@ -104,24 +118,27 @@ func _on_MercyButton_pressed():
 #control de focus
 #estando en modo menu, revisa si se presiono escape y regresa el focus al boton que se presiono antes
 func focus_control():
-	
+
 	if Input.is_action_just_pressed("ui_cancel"):
-		if fight_button.is_pressed():
-			in_menu_mode(false)
-			fight_button.pressed = false
-			fight_button.grab_focus()
-		if act_button.is_pressed():
-			in_menu_mode(false)
-			act_button.pressed = false
-			act_button.grab_focus()
-		if item_button.is_pressed():
-			in_menu_mode(false)
-			item_button.pressed = false
-			item_button.grab_focus()
-		if mercy_button.is_pressed():
-			in_menu_mode(false)
-			mercy_button.set_pressed(false)
-			mercy_button.grab_focus()
+		if not fight_ended:
+			if fight_button.is_pressed():
+				in_menu_mode(false)
+				fight_button.pressed = false
+				fight_button.grab_focus()
+			if act_button.is_pressed():
+				in_menu_mode(false)
+				act_button.pressed = false
+				act_button.grab_focus()
+			if item_button.is_pressed():
+				in_menu_mode(false)
+				item_button.pressed = false
+				item_button.grab_focus()
+			if mercy_button.is_pressed():
+				in_menu_mode(false)
+				mercy_button.set_pressed(false)
+				mercy_button.grab_focus()
+		else:
+			pass
 		
 
 func turn_control():
@@ -182,9 +199,9 @@ func add_option_page(options: Array, dialogs: Array, panel: String):
 			add_option(options[i], panel, null)
 
 #y esto esta mejor ahora
-func add_option(option, panel, dialog):
+func add_option(option, panel, dialoge):
 	match panel:
-		"act":
+		"act": 
 			panel = panels["act"]
 		"fight":
 			panel = panels["fight"]
@@ -200,12 +217,42 @@ func add_option(option, panel, dialog):
 		if first_column[i].get_node('Label').text == '':
 			first_column[i].get_node('Label').text = "* " + option
 			first_column[i].get_node('mButton').set_focus_mode(Control.FOCUS_ALL)
-			if dialog != null:
-				panels["act"].set_dialog(i + 1, 1, dialog) #le dice al panel de act en donde esta el boton asignado para que se ejecute el dialogo al ser presiondo 
+			if dialoge != null:
+				panels["act"].set_dialog(i + 1, 1, dialoge) #le dice al panel de act en donde esta el boton asignado para que se ejecute el dialogo al ser presiondo 
+				panels["act"].interactions[option] = { "row": i+1, "column": 1, "dialog" : dialoge} #almacena en interactions (que es uno diccionario) la posicion, el nombre de la interaccion, y el dialogo
 			break
 		elif second_column[i].get_node('Label').text == '':
 			second_column[i].get_node('Label').text = "* " + option
 			second_column[i].get_node('mButton').set_focus_mode(Control.FOCUS_ALL)
-			if dialog != null:
-				panels["act"].set_dialog(i + 1, 2, dialog)
+			if dialoge != null:
+				panels["act"].set_dialog(i + 1, 2, dialoge)
+				panels["act"].interactions[option] = { "row": i+1, "column": 2, "dialog" : dialoge}
 			break
+
+#nueva funcion para agregar opciones en lugares especificos
+func add_option_in(row: int, column: int, panel, option: String, dialog):
+	match panel:
+		"act":
+			panel = panels["act"]
+			panels["act"].interactions[option] = { "row": row, "column": column, "dialog" : dialog}
+		"fight":
+			panel = panels["fight"]
+		"item":
+			panel = panels["item"]
+		"mercy":
+			panel = panels["mercy"]
+		"selection":
+			panel = panels["selection"]
+	var first_column = panel.get_node("MarginContainer/HBoxContainer/VBoxContainer").get_children()
+	var second_column = panel.get_node("MarginContainer/HBoxContainer/VBoxContainer2").get_children()
+	match column:
+		1:
+			first_column[row - 1].get_node('Label').text = "* " + option
+			first_column[row - 1].get_node('mButton').set_focus_mode(Control.FOCUS_ALL)
+			if dialog != null:
+				panels["act"].set_dialog(row, 1, dialog)
+		2:
+			second_column[row - 1].get_node('Label').text = "* " + option
+			second_column[row - 1].get_node('mButton').set_focus_mode(Control.FOCUS_ALL)
+			if dialog != null:
+				panels["act"].set_dialog(row, 2, dialog)

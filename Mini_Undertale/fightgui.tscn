@@ -1,23 +1,24 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
 [ext_resource path="res://Escenas/GUI/GenericPanel3.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Escenas/GUI/ActPanel.gd" type="Script" id=3]
-[ext_resource path="res://Dialogo.gd" type="Script" id=4]
-[ext_resource path="res://SelectionPanel.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/ProgressBar.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/GUI/fightButton.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/GUI/fightButtonHover.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/GUI/fightButtonFocused.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/GUI/actButton.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/GUI/actButtonHover.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/GUI/actButtonFocused.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/GUI/itemButton.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/GUI/itemButtonHover.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/GUI/itemButtonFocused.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/GUI/mercyButton.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/GUI/mercyButtonHover.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/GUI/mercyButtonFocused.png" type="Texture" id=18]
+[ext_resource path="res://Scripts/GUI/MercyPanel.gd" type="Script" id=4]
+[ext_resource path="res://Dialogo.gd" type="Script" id=5]
+[ext_resource path="res://SelectionPanel.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/ProgressBar.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/GUI/fightButton.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/GUI/fightButtonHover.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/GUI/fightButtonFocused.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/GUI/actButton.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/GUI/actButtonHover.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/GUI/actButtonFocused.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/GUI/itemButton.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/GUI/itemButtonHover.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/GUI/itemButtonFocused.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/GUI/mercyButton.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/GUI/mercyButtonHover.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/GUI/mercyButtonFocused.png" type="Texture" id=19]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -288,6 +289,7 @@ margin_bottom = 158.0
 [node name="MercyPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
 visible = false
 margin_top = 8.0
+script = ExtResource( 4 )
 
 [node name="HBoxContainer" parent="VBoxContainer/MarginContainer2/Menu/MercyPanel/MarginContainer" index="0"]
 margin_right = 876.0
@@ -301,7 +303,7 @@ margin_left = 4.0
 margin_top = 8.0
 margin_right = -4.0
 margin_bottom = -4.0
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="Panel" type="Panel" parent="VBoxContainer/MarginContainer2/Menu/Dialogo"]
 anchor_right = 1.0
@@ -332,7 +334,7 @@ text = "you wanna have a bad      t     o        m"
 [node name="SelectEnemy" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
 visible = false
 margin_top = 8.0
-script = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_top = 468.0
@@ -373,14 +375,14 @@ text = "LV 1"
 
 [node name="HP" type="MarginContainer" parent="MarginContainer/HBoxContainer3"]
 margin_left = 342.0
-margin_right = 681.0
+margin_right = 680.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer3/HP"]
-margin_right = 339.0
+margin_right = 338.0
 margin_bottom = 50.0
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer3/HP/HBoxContainer"]
 margin_top = 18.0
@@ -391,7 +393,7 @@ text = "HP"
 [node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer3/HP/HBoxContainer"]
 margin_left = 22.0
 margin_top = 15.0
-margin_right = 298.0
+margin_right = 297.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 0, 20 )
 size_flags_horizontal = 3
@@ -400,14 +402,14 @@ max_value = 20.0
 percent_visible = false
 
 [node name="Number" type="Label" parent="MarginContainer/HBoxContainer3/HP/HBoxContainer"]
-margin_left = 302.0
+margin_left = 301.0
 margin_top = 18.0
-margin_right = 339.0
+margin_right = 338.0
 margin_bottom = 32.0
 text = "	20/20"
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer3"]
-margin_left = 685.0
+margin_left = 684.0
 margin_right = 1024.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
@@ -427,10 +429,10 @@ margin_bottom = 78.0
 mouse_filter = 2
 size_flags_horizontal = 3
 toggle_mode = true
-texture_normal = ExtResource( 7 )
-texture_pressed = ExtResource( 8 )
-texture_disabled = ExtResource( 8 )
-texture_focused = ExtResource( 9 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 9 )
+texture_disabled = ExtResource( 9 )
+texture_focused = ExtResource( 10 )
 expand = true
 stretch_mode = 4
 
@@ -449,10 +451,10 @@ margin_bottom = 78.0
 mouse_filter = 2
 size_flags_horizontal = 3
 toggle_mode = true
-texture_normal = ExtResource( 10 )
-texture_pressed = ExtResource( 11 )
-texture_disabled = ExtResource( 11 )
-texture_focused = ExtResource( 12 )
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 12 )
+texture_disabled = ExtResource( 12 )
+texture_focused = ExtResource( 13 )
 expand = true
 stretch_mode = 4
 
@@ -472,10 +474,10 @@ margin_bottom = 78.0
 mouse_filter = 2
 size_flags_horizontal = 3
 toggle_mode = true
-texture_normal = ExtResource( 13 )
-texture_pressed = ExtResource( 14 )
-texture_disabled = ExtResource( 14 )
-texture_focused = ExtResource( 15 )
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+texture_disabled = ExtResource( 15 )
+texture_focused = ExtResource( 16 )
 expand = true
 stretch_mode = 4
 
@@ -495,10 +497,10 @@ margin_bottom = 78.0
 mouse_filter = 2
 size_flags_horizontal = 3
 toggle_mode = true
-texture_normal = ExtResource( 16 )
-texture_pressed = ExtResource( 17 )
-texture_disabled = ExtResource( 17 )
-texture_focused = ExtResource( 18 )
+texture_normal = ExtResource( 17 )
+texture_pressed = ExtResource( 18 )
+texture_disabled = ExtResource( 18 )
+texture_focused = ExtResource( 19 )
 expand = true
 stretch_mode = 4
 [connection signal="pressed" from="Buttons/FightButton" to="VBoxContainer/MarginContainer2/Menu" method="_on_FightButton_pressed"]
