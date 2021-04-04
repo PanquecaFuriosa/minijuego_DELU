@@ -78,10 +78,8 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 1.5
 
 [node name="Go to World" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
-margin_left = 0.0
 margin_right = 696.0
 margin_bottom = 16.0
-size_flags_vertical = 1
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 20.0
@@ -92,11 +90,9 @@ size_flags_vertical = 4
 custom_styles/separator = SubResource( 4 )
 
 [node name="Start Battle" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_left = 0.0
 margin_top = 28.0
 margin_right = 696.0
 margin_bottom = 44.0
-size_flags_vertical = 1
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 margin_top = 452.0
