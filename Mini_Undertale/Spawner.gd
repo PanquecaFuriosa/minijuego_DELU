@@ -15,4 +15,4 @@ func Fire(projectile, direction = -90):
 	#proj.trayecto = Vector2(proj.velocidad,0)
 	#proj.trayecto = proj.trayecto.rotated(direction)
 	proj.set_rotation_degrees(direction)
-	proj.elegir_trayectoria()
+	#proj.elegir_trayectoria()

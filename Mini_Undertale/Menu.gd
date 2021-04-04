@@ -36,12 +36,12 @@ func _ready():
 			panels.connect("menu_button_pressed", self, "turn_control")
 	
 	#ejemplos de como se usa esta **aun mas** maravillosa funcion
-	add_option("mushu", "fight", null)
-	add_option("doctor pepper", "item", null)
-	add_option("the souls of the damned", "item", null)
-	add_option("un peluche", "item", null)
+	#add_option("mushu", "fight", null)
+	#add_option("doctor pepper", "item", null)
+	#add_option("the souls of the damned", "item", null)
+	#add_option("un peluche", "item", null)
 	#add_option("there is no mercy", "mercy", null)
-	add_option("nombre del enemigo", "selection", null)
+	#add_option("nombre del enemigo", "selection", null)
 	#add_option("Flee", "mercy", null)
 	#add_option_in(2, 1, "mercy", "Spare", null)
 
@@ -59,9 +59,9 @@ func _ready():
 #		["happy waifu, happy laifu", "but everybody calls me, giorgio", "aduduaduaduaete", "wake me up inside", "el caballo se llamaba viernes"], #luego las respuestas al presionar cada opcion
 #		"act") #y el panel
 #	add_option_in(2, 1, "act", "when I was", "a young boy") 
-	add_option_page(
-		["Check", "Imitate", "Flirt"] , ["Life is difficult for this enemy.Stereotypical: Curvaceously attractive, but no brains...", "You lie immobile with Moldsmal. You feel like you understand the world a little better.", "You wiggle your hips. Moldsmal wiggles back. What a meaningful conversation!"], "act"
-	)
+	#add_option_page(
+		#["Check", "Imitate", "Flirt"] , ["Life is difficult for this enemy.Stereotypical: Curvaceously attractive, but no brains...", "You lie immobile with Moldsmal. You feel like you understand the world a little better.", "You wiggle your hips. Moldsmal wiggles back. What a meaningful conversation!"], "act"
+	#)
 
 func at_player_turn_start():
 	in_menu_mode(false) #al inicio del turno quita el modo menu y regresa el focus al boton presionado en el turno anterior y emite la funcion de comienzo de turno  para que se muestre el dialogo de ese comienzo

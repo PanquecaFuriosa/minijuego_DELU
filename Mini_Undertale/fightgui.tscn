@@ -1,8 +1,8 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
-[ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Act_panel_froggit.gd" type="Script" id=1]
 [ext_resource path="res://Escenas/GUI/GenericPanel3.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Escenas/GUI/ActPanel.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Menu_froggit.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/GUI/MercyPanel.gd" type="Script" id=4]
 [ext_resource path="res://Dialogo.gd" type="Script" id=5]
 [ext_resource path="res://SelectionPanel.gd" type="Script" id=6]
@@ -19,6 +19,11 @@
 [ext_resource path="res://Sprites/GUI/mercyButton.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/GUI/mercyButtonHover.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/GUI/mercyButtonFocused.png" type="Texture" id=19]
+[ext_resource path="res://Scripts/fightend.gd" type="Script" id=20]
+[ext_resource path="res://Fonts/PixelOperatorMono-Bold.ttf" type="DynamicFontData" id=21]
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 21 )
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -32,6 +37,7 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
+script = ExtResource( 20 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -65,7 +71,7 @@ margin_right = 1004.0
 margin_bottom = 210.0
 tab_align = 0
 tabs_visible = false
-script = ExtResource( 1 )
+script = ExtResource( 3 )
 
 [node name="FightPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
 margin_top = 8.0
@@ -174,7 +180,8 @@ margin_bottom = 29.0
 [node name="ActPanel" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
 visible = false
 margin_top = 8.0
-script = ExtResource( 3 )
+custom_fonts/font = SubResource( 5 )
+script = ExtResource( 1 )
 
 [node name="HBoxContainer" parent="VBoxContainer/MarginContainer2/Menu/ActPanel/MarginContainer" index="0"]
 margin_right = 876.0
@@ -503,6 +510,7 @@ texture_disabled = ExtResource( 18 )
 texture_focused = ExtResource( 19 )
 expand = true
 stretch_mode = 4
+[connection signal="fight_ended" from="VBoxContainer/MarginContainer2/Menu" to="." method="_on_Menu_fight_ended"]
 [connection signal="pressed" from="Buttons/FightButton" to="VBoxContainer/MarginContainer2/Menu" method="_on_FightButton_pressed"]
 [connection signal="pressed" from="Buttons/ActButton" to="VBoxContainer/MarginContainer2/Menu" method="_on_ActButton_pressed"]
 [connection signal="pressed" from="Buttons/ItemButton" to="VBoxContainer/MarginContainer2/Menu" method="_on_ItemButton_pressed"]

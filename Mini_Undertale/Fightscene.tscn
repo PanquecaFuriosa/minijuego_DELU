@@ -37,12 +37,21 @@ script = ExtResource( 5 )
 Projectile1 = ExtResource( 6 )
 
 [node name="Spawner0" parent="Commander" instance=ExtResource( 7 )]
-position = Vector2( 448, 216 )
+position = Vector2( 610.635, 313.754 )
 
 [node name="Spawner1" parent="Commander" instance=ExtResource( 7 )]
+position = Vector2( 492.333, 321.026 )
+
+[node name="Spawner2" parent="Commander" instance=ExtResource( 7 )]
+position = Vector2( 643.161, 265.671 )
+
+[node name="Spawner3" parent="Commander" instance=ExtResource( 7 )]
+position = Vector2( 528.61, 251.529 )
+
+[node name="Spawner4" parent="Commander" instance=ExtResource( 7 )]
+position = Vector2( 486.184, 271.328 )
 
 [node name="TurnTimer" type="Timer" parent="."]
-wait_time = 0.001
 one_shot = true
 
 [node name="GUI" parent="." instance=ExtResource( 8 )]

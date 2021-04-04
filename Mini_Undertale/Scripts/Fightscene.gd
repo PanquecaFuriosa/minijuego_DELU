@@ -32,14 +32,14 @@ func Start_Enemy_Turn():
 	#Posicionar jugador
 	Player.position = Box.position
 	#Mover Spawners
-	Commander.Spawner1.position = Vector2(640,256)
+	#Commander.Spawner1.position = Vector2(640,256)
 	#() Espera a que la caja termine de escalar
 	yield(Box.tweenNode,"tween_completed")
 	#Iniciar turn timer
 	TurnTimer.start(enemy_turn_duration)
 	#Activar Spawners
-	Commander.Shoot_Pattern1(Commander.Projectile1,Commander.Spawner0, 1)
-	Commander.Shoot_Pattern1(Commander.Projectile1,Commander.Spawner1, 0.5)
+	#Commander.Shoot_Pattern1(Commander.Projectile1,Commander.Spawner0, 1)
+	#Commander.Shoot_Pattern1(Commander.Projectile1,Commander.Spawner1, 0.5)
 	
 
 

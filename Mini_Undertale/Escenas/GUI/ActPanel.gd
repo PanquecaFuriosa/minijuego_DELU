@@ -14,7 +14,7 @@ var dialog1_c2
 var dialog2_c2
 var dialog3_c2
 
-var enemy_name = "Gibby"
+var enemy_name: String
 var enemy_atk = "69"
 var enemy_def = "420"
 
@@ -189,7 +189,7 @@ func set_new_state(state_name, start_dialogs, interaction_dialogs, can_be_spared
 
 
 
-func play_state(state = {"start_dialogs": start_dialog, "interaction_dialogs": interaction_dialogs, "can_be_spared": can_be_spared}):
+func play_state(state):
 
 
 	if state["start_dialogs"][0] != "current":
