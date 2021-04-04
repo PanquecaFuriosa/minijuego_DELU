@@ -10,60 +10,36 @@ extents = Vector2( 34.1667, 10 )
 extents = Vector2( 10, 33.8333 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 32.8334, 10 )
+extents = Vector2( 34.2857, 11.4286 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 10, 32.5748 )
 
 [node name="TheBox" type="Node2D"]
-position = Vector2( 526.5, 266.833 )
+position = Vector2( 120, 120 )
 scale = Vector2( 3.5, 3.5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Frame" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Frame"]
-position = Vector2( 0, -40 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame/StaticBody2D"]
-shape = SubResource( 1 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Frame"]
-position = Vector2( 40, 0 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Frame/StaticBody2D2"]
-shape = SubResource( 2 )
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Frame"]
-position = Vector2( 0, 40 )
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Frame/StaticBody2D3"]
-shape = SubResource( 3 )
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Frame"]
-position = Vector2( -40, 0 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Frame/StaticBody2D4"]
-shape = SubResource( 4 )
-
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -36.0
-margin_top = -36.0
-margin_right = 36.0
-margin_bottom = 36.0
+[node name="BoxVisual" type="Node2D" parent="."]
+
+[node name="WhiteSquare" type="ColorRect" parent="BoxVisual"]
+margin_left = -34.0
+margin_top = -34.0
+margin_right = 34.0
+margin_bottom = 34.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="BlackSquare" type="ColorRect" parent="BoxVisual"]
 margin_left = -32.0
 margin_top = -32.0
 margin_right = 32.0
@@ -72,3 +48,31 @@ color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Frame" type="Node2D" parent="."]
+scale = Vector2( 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Frame"]
+position = Vector2( -1.52588e-05, -43.4286 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Frame"]
+position = Vector2( 44.5714, -1.52588e-05 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Frame/StaticBody2D2"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Frame"]
+position = Vector2( 1.14284, 43.4286 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Frame/StaticBody2D3"]
+position = Vector2( -0.428596, 1.95227 )
+shape = SubResource( 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Frame"]
+position = Vector2( -44.5715, -1.52588e-05 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Frame/StaticBody2D4"]
+shape = SubResource( 4 )
