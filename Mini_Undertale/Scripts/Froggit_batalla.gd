@@ -20,6 +20,7 @@ func _ready():
 	get_child(3).get_child(4).queue_free()
 	ins_corazon = corazon.instance()
 	get_child(3).add_child(ins_corazon)
+	
 
 
 func _on_GUI_back_world():

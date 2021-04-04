@@ -11,6 +11,11 @@ var trozo4
 var trozo5
 var trozo6
 
+func _ready():
+	#como raios quiere que este determinado si no me das buena musica :D?
+	yield(get_tree().create_timer(2.5),'timeout')
+	$DETERMINATION.play()
+
 func instanciar(trozo_a, trozo_b, trozo_c: RigidBody2D):
 	"""Funcion que dados tres variables tipo rigidbody, les asigna
 	un trozo de corazón ya pre cargado y se les da la posicion inicial.
@@ -39,12 +44,12 @@ func _process(delta):
 	elif invisible and seg >= 2:
 		instanciar(trozo1, trozo2, trozo3)
 		instanciar(trozo4, trozo5, trozo6)
-		self.get_child(5).apply_impulse(Vector2(0, 650), Vector2(-60, -100))
-		self.get_child(6).apply_impulse(Vector2(0, 65), Vector2(-80, -150))
-		self.get_child(7).apply_impulse(Vector2(0, 65), Vector2(-120, -120))
-		self.get_child(8).apply_impulse(Vector2(0, 65), Vector2(60, -120))
-		self.get_child(9).apply_impulse(Vector2(0, 65), Vector2(90, -130))
-		self.get_child(10).apply_impulse(Vector2(0, 65), Vector2(100, -130))
+		self.get_child(6).apply_impulse(Vector2(0, 650), Vector2(-60, -100))
+		self.get_child(7).apply_impulse(Vector2(0, 65), Vector2(-80, -150))
+		self.get_child(8).apply_impulse(Vector2(0, 65), Vector2(-120, -120))
+		self.get_child(9).apply_impulse(Vector2(0, 65), Vector2(60, -120))
+		self.get_child(10).apply_impulse(Vector2(0, 65), Vector2(90, -130))
+		self.get_child(11).apply_impulse(Vector2(0, 65), Vector2(100, -130))
 		invisible = false
 	
 	elif not(invisible) and seg >= 2 and seg < 10:

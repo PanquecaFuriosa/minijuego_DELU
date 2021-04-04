@@ -19,6 +19,10 @@ onready var Commander = $'Commander'
 func _ready():
 
 	GUI_Menu.connect('player_turn_ended',self,"Start_Enemy_Turn")
+	
+	#Musica :D
+	yield(get_tree().create_timer(0.5),"timeout")
+	$Mixtape.play()
 
 
 func Start_Enemy_Turn():

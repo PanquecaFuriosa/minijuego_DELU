@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Determination.ogg-c07829711b670a0b71adcc2979013144.oggstr"
+
+[deps]
+
+source_file="res://Audio/Determination.ogg"
+dest_files=[ "res://.import/Determination.ogg-c07829711b670a0b71adcc2979013144.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ruins.ogg-d5022f0145760706ced45d6eaf8b62c3.oggstr"
+
+[deps]
+
+source_file="res://Audio/Ruins.ogg"
+dest_files=[ "res://.import/Ruins.ogg-d5022f0145760706ced45d6eaf8b62c3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -8,6 +8,11 @@ var mueve_corazon = false
 var velocidad_corazon: Vector2
 export var rapidez_corazon = 1000
 
+func _ready():
+	#Musica :D 
+	yield(get_tree().create_timer(0.5),'timeout')
+	$Ambient_music.play()
+
 #Cambio de escena a la de batalla
 func _on_Puertas_cambia_scena(valor):
 	fondo = fondo_negro.instance()
@@ -22,8 +27,10 @@ func _on_Puertas_cambia_scena(valor):
 func _process(delta):
 	#Este es el movimiento del corazon en la transicion a la batalla
 	if mueve_corazon and not(corazon.position.y > 550 and corazon.position.y < 570 and corazon.position.x < 34 and corazon.position.x > 16):
-		velocidad_corazon = Vector2(30, 560) - get_child(3).position
+		velocidad_corazon = Vector2(30, 560) - get_child(4).position
 		velocidad_corazon = velocidad_corazon.normalized()
-		get_child(3).translate(velocidad_corazon * delta * rapidez_corazon)
+
+		get_child(4).translate(velocidad_corazon * delta * rapidez_corazon)
 	elif mueve_corazon and corazon.position.y > 550 and corazon.position.y < 570 and corazon.position.x < 34 and corazon.position.x > 16:
 		get_tree().change_scene_to(batalla)
+		

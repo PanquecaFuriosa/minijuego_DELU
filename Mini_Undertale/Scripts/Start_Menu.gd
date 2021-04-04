@@ -13,7 +13,6 @@ export(PackedScene) var batalla
 func _ready():
 	
 	#Conecta las señales al prersionar los botones para hacer el cambio de escena adecuado
-	
 	world_button.connect("pressed",self, "_On_Button_Press",["world"])
 	battle_button.connect("pressed",self, "_On_Button_Press",["battle"])
 	
@@ -21,6 +20,9 @@ func _ready():
 	world_button.set_focus_mode(Control.FOCUS_ALL)
 	battle_button.set_focus_mode(Control.FOCUS_ALL)
 	world_button.grab_focus()
+	
+	#Musica :D
+	$Menu_music.play()
 
 func _On_Button_Press(value: String):
 	

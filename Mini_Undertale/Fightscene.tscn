@@ -57,4 +57,7 @@ one_shot = true
 [node name="GUI" parent="." instance=ExtResource( 8 )]
 margin_right = 1024.0
 margin_bottom = 600.0
+
+[node name="Mixtape" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
 [connection signal="timeout" from="TurnTimer" to="." method="Start_Player_Turn"]

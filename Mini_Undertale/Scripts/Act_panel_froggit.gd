@@ -1,11 +1,6 @@
 extends "res://Escenas/GUI/ActPanel.gd"
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	._ready()
 	enemy_name = "Froggit"
@@ -16,7 +11,3 @@ func _ready():
 	set_new_state("Low HP.", ["Froggit is trying to run away."], ["current"], false)
 	play_state(states.get("neutral")) 
 	set_spare_requirement("Check", 1)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
