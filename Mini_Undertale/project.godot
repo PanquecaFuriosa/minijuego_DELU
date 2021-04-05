@@ -22,7 +22,9 @@ _global_script_class_icons={
 
 config/name="Mini_Undertale"
 run/main_scene="res://Escenas/Start_Menu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Sprites/Corazon.png"
+config/macos_native_icon="res://determinacion.png"
+config/windows_native_icon="res://Sprites/Corazon.png"
 
 [autoload]
 

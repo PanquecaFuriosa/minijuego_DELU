@@ -24,3 +24,4 @@ func _process(delta):
 			get_child(4).play("abajo")
 		else:
 			get_child(4).stop()
+
