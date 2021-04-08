@@ -90,8 +90,12 @@ position = Vector2( 0.0869565, 1.87291 )
 collision_mask = 25
 script = ExtResource( 3 )
 
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( -0.0869565, -1.87291 )
+
 [node name="Sprite" parent="." index="1"]
-scale = Vector2( 3, 3 )
+position = Vector2( -0.086957, -1.87291 )
+scale = Vector2( 2.18693, 2.40247 )
 texture = ExtResource( 7 )
 
 [node name="Movement" parent="." index="2"]

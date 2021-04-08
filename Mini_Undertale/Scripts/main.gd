@@ -2,6 +2,7 @@ extends Node2D
 export (PackedScene) var batalla
 var fondo_negro = preload("res://Escenas/Fondo.tscn")
 var corazonp = preload("res://Escenas/Corazon.tscn")
+var playerhitbox = preload("res://Sprites_y_Recursos/playercollisionshape.tres")
 var corazon: Node2D
 var fondo: Node2D
 var mueve_corazon = false
@@ -9,6 +10,8 @@ var velocidad_corazon: Vector2
 export var rapidez_corazon = 1000
 
 func _ready():
+	
+	get_node("Player/CollisionShape2D").set_shape(playerhitbox)
 	#Musica :D 
 	yield(get_tree().create_timer(0.5),'timeout')
 	$Ambient_music.play()
