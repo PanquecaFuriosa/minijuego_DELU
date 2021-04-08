@@ -2,7 +2,7 @@ extends Node2D
 export (PackedScene) var batalla
 var fondo_negro = preload("res://Escenas/Fondo.tscn")
 var corazonp = preload("res://Escenas/Corazon.tscn")
-var playerhitbox = preload("res://Sprites_y_Recursos/playercollisionshape.tres")
+var playerhitbox = preload("res://Sprites/Recursos/playercollisionshape.tres")
 var corazon: Node2D
 var fondo: Node2D
 var mueve_corazon = false

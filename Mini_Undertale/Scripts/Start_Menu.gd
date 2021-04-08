@@ -43,8 +43,8 @@ func _On_Button_Press(value: String):
 	
 
 func Scene_Transition():
-	# Lo que se tiene que mover el corazon para quedar en el punto exacto
-	var traslation :Vector2 = Vector2(49,8)
+	# Lo que se tiene que mover el corazon para quedar en el punto exacto 51,22
+	var traslation :Vector2 = Vector2(51,22)
 	#Crear nuevo corazon, ajustar su tamaño y posicion
 	corazon = corazonp.instance()
 	add_child(corazon)
