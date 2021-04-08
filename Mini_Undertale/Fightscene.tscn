@@ -28,7 +28,7 @@ scale = Vector2( 1, 1 )
 scale_time = 0.5
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 633.036, 346.845 )
+position = Vector2( 512, 160 )
 scale = Vector2( 0.571428, 0.571428 )
 speed = 100.0
 

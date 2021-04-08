@@ -1,7 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://TheBox.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Escenas/GUI/Theme_cajita.tres" type="StyleBox" id=2]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 32.5748 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 34.1667, 10 )
@@ -12,9 +15,6 @@ extents = Vector2( 10, 33.8333 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 34.2857, 11.4286 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 10, 32.5748 )
-
 [node name="TheBox" type="Node2D"]
 position = Vector2( 120, 120 )
 scale = Vector2( 3.5, 3.5 )
@@ -23,55 +23,45 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-
 [node name="Tween" type="Tween" parent="."]
 
-[node name="BoxVisual" type="Node2D" parent="."]
-
-[node name="WhiteSquare" type="ColorRect" parent="BoxVisual"]
-margin_left = -34.0
-margin_top = -34.0
-margin_right = 34.0
-margin_bottom = 34.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BlackSquare" type="ColorRect" parent="BoxVisual"]
+[node name="Panel" type="Panel" parent="."]
 margin_left = -32.0
 margin_top = -32.0
 margin_right = 32.0
 margin_bottom = 32.0
-color = Color( 0, 0, 0, 1 )
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/panel = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Frame" type="Node2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Frame"]
-position = Vector2( -1.52588e-05, -43.4286 )
+[node name="Left" type="StaticBody2D" parent="Frame"]
+position = Vector2( -39.9536, -0.509663 )
+scale = Vector2( 1, 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame/StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Frame/Left"]
+shape = SubResource( 4 )
+
+[node name="Up" type="StaticBody2D" parent="Frame"]
+position = Vector2( 1.18921, -40.0463 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Frame/Up"]
 shape = SubResource( 1 )
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="Frame"]
-position = Vector2( 44.5714, -1.52588e-05 )
+[node name="Right" type="StaticBody2D" parent="Frame"]
+position = Vector2( 41.1429, -1.09139e-11 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Frame/StaticBody2D2"]
+[node name="Right" type="CollisionShape2D" parent="Frame/Right"]
+position = Vector2( -1.14282, 1.52588e-05 )
 shape = SubResource( 2 )
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="Frame"]
-position = Vector2( 1.14284, 43.4286 )
+[node name="Down" type="StaticBody2D" parent="Frame"]
+position = Vector2( 3.30503, 39.5367 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Frame/StaticBody2D3"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Frame/Down"]
 position = Vector2( -0.428596, 1.95227 )
 shape = SubResource( 3 )
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Frame"]
-position = Vector2( -44.5715, -1.52588e-05 )
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Frame/StaticBody2D4"]
-shape = SubResource( 4 )

@@ -1,6 +1,7 @@
 extends "res://Scripts/Fightscene.gd"
 
 var corazon = preload("res://Escenas/Corazon.tscn")
+var hitbox = preload("res://Escenas/GUI/heartcollisionshape.tres")
 var ins_corazon: Sprite
 
 func Start_Enemy_Turn():
@@ -18,6 +19,7 @@ func Start_Enemy_Turn():
 func _ready():
 	get_child(3).get_child(1).queue_free()
 	get_child(3).get_child(4).queue_free()
+	get_child(3).get_child(0).set_shape(hitbox)
 	ins_corazon = corazon.instance()
 	get_child(3).add_child(ins_corazon)
 	

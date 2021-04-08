@@ -5,15 +5,17 @@ const MARGIN_TEMP = 10 #esto temporalmente hasta que descubra como demonios toma
 
 
 onready var tweenNode = $'Tween'
-onready var spriteNode =$'Sprite'
+onready var boxNode =$Panel
 onready var gui = get_parent().get_node('GUI')
 onready var player = get_parent().get_node('Player')
 onready var own_space = gui.get_node('VBoxContainer/MarginContainer2')
 
-#Ancho y alto del sprite sin escalar
-onready var spriteWidth = spriteNode.texture.get_width()
-onready var spriteHeight = spriteNode.texture.get_height()
-
+#Ancho y alto del box sin escalar
+#get_margin da la distancia entre un borde y el anchor (que en este caso esta en el centro de la caja)
+#0: izquierda, 2:derecha
+onready var boxWidth = boxNode.get_margin(2) - boxNode.get_margin(0)
+#1: arriba, 3:abajo
+onready var boxHeight = boxNode.get_margin(3) - boxNode.get_margin(1)
 
 #Esto toma el borde de arriba del contenedor del medidor de hp 
 #y le agrega un margen 
@@ -40,7 +42,7 @@ func _ready():
 func scaleWidth(pixels):
 	#escala la caja aumentandole la cantidad de pixeles 
 	#a la derecha y a la izquierda a la vez
-	var new_scale = (((scale.x * spriteWidth + pixels*2) * scale.x) / (scale.x * spriteWidth))
+	var new_scale = (((scale.x * boxWidth + pixels*2) * scale.x) / (scale.x * boxWidth))
 	#lo de arriba lo calcule con una regla de tres
 	
 	var current_y = scale.y
@@ -51,7 +53,7 @@ func scaleWidth(pixels):
 func scaleHeight(pixels):
 	#escala la caja aumentandole la cantidad de pixeles 
 	#arriba y abajo a la vez
-	var new_scale = (((scale.y * spriteHeight + pixels*2) * scale.y) / (scale.y * spriteHeight))
+	var new_scale = (((scale.y * boxHeight + pixels*2) * scale.y) / (scale.y * boxHeight))
 	
 	
 	var current_x = scale.x
@@ -76,9 +78,9 @@ func scaleSize(width = 0, height = 0):
 	
 func fix_height(new_scale):
 	var h_box = position.y
-	var h_rect = (new_scale * spriteHeight)/2
+	var h_rect = (new_scale * boxHeight)/2
 	var h_total_box = h_box + h_rect
 	if h_total_box - labelsMargin > 0:
-		tweenNode.interpolate_property(self, "position", position, Vector2(position.x, labelsMargin - ((new_scale * spriteHeight)/2)) , 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		tweenNode.interpolate_property(self, "position", position, Vector2(position.x, labelsMargin - ((new_scale * boxHeight)/2)) , 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
 		tweenNode.start()
 
