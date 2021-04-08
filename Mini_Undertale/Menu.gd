@@ -18,6 +18,8 @@ onready var panels = {
 
 onready var buttons = [fight_button, act_button, item_button, mercy_button]
 
+var cajita :StyleBoxFlat = load("res://Escenas/GUI/Theme_cajita.tres")
+
 var current_button_pressed #esto para guardar el ultimo boton presionado al entrar en el turno del enemigo
 var is_first_turn = true
 var fight_ended = false
@@ -34,6 +36,11 @@ func _ready():
 	for panels in get_children():
 		if panels.name != "Dialogo": #excepto por el dialogo, el no tiene botones :(
 			panels.connect("menu_button_pressed", self, "turn_control")
+	
+	#Aplica el theme de cajita a todos los hijos
+	set('custom_styles/panel',cajita)
+	for panel in get_children():
+		panel.change_tab_style(cajita)
 	
 	#ejemplos de como se usa esta **aun mas** maravillosa funcion
 	#add_option("mushu", "fight", null)

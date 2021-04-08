@@ -1,7 +1,9 @@
 extends "res://Menu.gd"
+export(Color) var Test = Color(0.9,0.9,0.9,0.2)
 
 func _ready():
 	._ready()
+	
 	add_option("mushu", "fight", null)
 	add_option("doctor pepper", "item", null)
 	add_option("the souls of the damned", "item", null)

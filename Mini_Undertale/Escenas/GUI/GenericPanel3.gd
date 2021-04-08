@@ -32,3 +32,8 @@ func button5_pressed():
 
 func button6_pressed():
 	any_button_pressed()
+	
+	#Para que la caja tenga la apariencia que debe tener
+func change_tab_style(cajita: StyleBoxFlat):
+	set('custom_styles/panel',cajita)
+	$Panel.set('custom_styles/panel',cajita)

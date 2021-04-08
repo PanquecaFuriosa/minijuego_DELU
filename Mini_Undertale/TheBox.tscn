@@ -50,7 +50,6 @@ __meta__ = {
 }
 
 [node name="Frame" type="Node2D" parent="."]
-scale = Vector2( 1, 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Frame"]
 position = Vector2( -1.52588e-05, -43.4286 )
