@@ -22,7 +22,7 @@ var enemy_def = "420"
 var encounter_dialog
 
 var start_dialogs_stage #variable para pasarle a la caja de dialogo al comienzo de cada turno que dialogo se va a mostrar
-
+var current_state
 
 var interactions = {} #aqui se almacenan todas las interacciones con su posicion y el dialogo que desencadenan
 
@@ -165,14 +165,16 @@ func set_neutral_state(start_dialogs, interaction_dialogs, can_be_spared):
 	states["neutral"] = {
 		"start_dialogs": start_dialogs,
 		"interaction_dialogs": interaction_dialogs,
-		"can_be_spared": can_be_spared
+		"can_be_spared": can_be_spared,
+		"state_name": "neutral"
 		}
 
 func set_spare_state(start_dialogs, interaction_dialogs):
 	states["spare"] = {
 		"start_dialogs": start_dialogs,
 		"interaction_dialogs": interaction_dialogs,
-		"can_be_spared": true
+		"can_be_spared": true,
+		"state_name": "spare"
 		}
 
 func set_new_state(state_name, start_dialogs, interaction_dialogs, can_be_spared):
@@ -182,8 +184,8 @@ func set_new_state(state_name, start_dialogs, interaction_dialogs, can_be_spared
 			
 			"start_dialogs": start_dialogs,
 			"interaction_dialogs" : interaction_dialogs,
-			"can_be_spared": can_be_spared
-			
+			"can_be_spared": can_be_spared,
+			"state_name": state_name
 			}
 ###############################
 
@@ -199,7 +201,7 @@ func play_state(state):
 		change_response(state.interaction_dialogs["interaction"], state.interaction_dialogs["new_interaction"]) #esto para cambiar la respuesta por default de algun boton que se mencione en el state
 	if state["can_be_spared"]:
 		can_be_spared()
-	
+	current_state = state["state_name"]
 
 
 func at_turn_beginning():
