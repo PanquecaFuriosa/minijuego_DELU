@@ -14,5 +14,4 @@ func _on_Area2D_body_entered(body):
 		self.call_deferred('queue_free')
 		body.get_node('Health').Health_Update(damage)
 	else:
-		print("hola?")
 		queue_free()

@@ -18,13 +18,13 @@ func _ready():
 	rng.randomize()
 	visible = false
 	GUI_Menu.connect("player_turn_ended", self, "_on_Enemy_Turn")
-	set_speech_dialogs("neutral", ["Squorch...", "Burble burb...", "*Slime sounds*", "*Sexy wiggle*"])
+	#set_speech_dialogs("neutral", ["Squorch...", "Burble burb...", "*Slime sounds*", "*Sexy wiggle*"])
 
 
 
 	
 func change_speech(new_text):
-	label.text = new_text 
+	label.bbcode_text = "[wave amp=26 freq=10][shake rate=15 level=11]" + new_text 
 	
 	
 

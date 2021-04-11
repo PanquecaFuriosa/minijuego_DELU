@@ -16,8 +16,7 @@ func _on_Timer_timeout():
 var first_impact = true
 
 func _on_Proyectil2_Modsmal_body_entered(body):
-	if first_impact:
-		first_impact = false
+	if body.name == "Up":
 		pass
 	else:
 		if body.name == "Player":

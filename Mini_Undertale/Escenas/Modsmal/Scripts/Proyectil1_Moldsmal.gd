@@ -10,7 +10,7 @@ export(int) var damage :int = 5
 
 func _ready():
 	rng.randomize()
-	timer.set_wait_time(rng.randf_range(0.2, 0.5))
+	timer.set_wait_time(rng.randf_range(0.1, 0.7))
 
 func _process(delta):
 	var direction  = Vector2.DOWN * velocity * delta
@@ -26,8 +26,7 @@ func _on_Timer_timeout():
 var first_impact = true
 
 func _on_Proyectil1_Modsmal_body_entered(body):
-	if first_impact:
-		first_impact = false
+	if body.name == "Up":
 		pass
 	else:
 		if body.name == "Player":
