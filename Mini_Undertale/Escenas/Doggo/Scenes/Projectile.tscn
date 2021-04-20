@@ -4,7 +4,6 @@
 [ext_resource path="res://Escenas/Doggo/Sprites/Attack.png" type="Texture" id=2]
 [ext_resource path="res://Escenas/Doggo/Scripts/Proyectil_Doggo.gd" type="Script" id=3]
 
-
 [node name="Area2D" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 velocity = 100
@@ -14,3 +13,4 @@ duration = 2.0
 texture = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="." index="2"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

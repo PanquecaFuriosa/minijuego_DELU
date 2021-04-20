@@ -14,7 +14,9 @@ export(float) var enemy_turn_duration :float = 5.0
 
 onready var Commander = $'Commander'
 
-
+var corazon = preload("res://Escenas/Corazon.tscn")
+var hitbox = preload("res://Escenas/GUI/heartcollisionshape.tres")
+var ins_corazon: Sprite
 
 func _ready():
 
@@ -63,5 +65,9 @@ func Start_Player_Turn():
 
 func game_over():
 	get_tree().change_scene_to(game_over)
+	
+func _on_GUI_back_world():
+	yield(get_tree().create_timer(5), "timeout")
+	get_tree().change_scene("res://main.tscn")
 
 

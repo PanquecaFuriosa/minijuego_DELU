@@ -1,8 +1,5 @@
 extends "res://Scripts/Fightscene.gd"
 
-var corazon = preload("res://Escenas/Corazon.tscn")
-var hitbox = preload("res://Escenas/GUI/heartcollisionshape.tres")
-var ins_corazon: Sprite
 
 func Start_Enemy_Turn():
 	.Start_Enemy_Turn()
