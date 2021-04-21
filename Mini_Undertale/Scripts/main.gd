@@ -1,13 +1,13 @@
 extends Node2D
-export (PackedScene) var batalla
 var fondo_negro = preload("res://Escenas/Fondo.tscn")
 var corazonp = preload("res://Escenas/Corazon.tscn")
 var playerhitbox = preload("res://Sprites/Recursos/playercollisionshape.tres")
 var corazon: Node2D
+var batalla: PackedScene
 var fondo: Node2D
 var mueve_corazon = false
 var velocidad_corazon: Vector2
-export var rapidez_corazon = 1500
+export var rapidez_corazon = 1300
 
 func _ready():
 	
@@ -26,7 +26,12 @@ func _on_Puertas_cambia_scena(valor):
 	corazon.position = get_child(0).position
 	get_child(0).queue_free()
 	mueve_corazon = true
-	
+	if valor == 1:
+		batalla =  preload("res://Escenas/Froggit_batalla.tscn")
+	elif valor == 2:
+		batalla =  preload("res://Escenas/Modsmal/Scenes/Fightscene_Modsmal.tscn")
+	else:
+		print("hola")
 	
 func _process(delta):
 	#Este es el movimiento del corazon en la transicion a la batalla

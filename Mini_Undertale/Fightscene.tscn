@@ -63,8 +63,8 @@ margin_bottom = 600.0
 volume_db = -12.0
 
 [node name="TextureRect" parent="." instance=ExtResource( 10 )]
-margin_left = 600.0
-margin_top = 96.0
-margin_right = 725.0
-margin_bottom = 236.0
+margin_left = 590.101
+margin_top = 67.7157
+margin_right = 715.101
+margin_bottom = 207.716
 [connection signal="timeout" from="TurnTimer" to="." method="Start_Player_Turn"]

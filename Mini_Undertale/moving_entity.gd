@@ -25,3 +25,7 @@ func _process(delta):
 		else:
 			get_child(4).stop()
 
+
+
+func _on_GUI_back_world():
+	pass # Replace with function body.

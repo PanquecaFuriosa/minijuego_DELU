@@ -37,6 +37,9 @@ custom_constants/margin_right = 100
 custom_constants/margin_top = 20
 custom_constants/margin_left = 100
 custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 margin_left = 100.0
