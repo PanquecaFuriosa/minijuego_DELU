@@ -22,7 +22,11 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		#TEMPORAL. Lo ideal seria que la hitbox del corazon fuera la que se deshabilite por un tiempo, pero xd.
 		self.get_node("CollisionShape2D").set_deferred('disabled',true)
-		body.get_node('Health').Health_Update(damage)
+		print(body.get_node('Movement').direction)
+		
+		if body.get_node('Movement').direction != Vector2(0,0):
+			body.get_node('Health').Health_Update(damage)
+
 	else:
 		queue_free()
 
