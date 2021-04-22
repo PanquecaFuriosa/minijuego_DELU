@@ -8,6 +8,9 @@ onready var placement = get_parent().get_node('Commander/Spawner0').get_global_p
 
 signal tween_completed
 
+#Señal para detección/no detección de movimiento
+signal movement(detected)
+
 func _ready():
 	set_process(false)
 	
@@ -22,10 +25,12 @@ func _on_Area2D_body_entered(body):
 	if body.name == "Player":
 		#TEMPORAL. Lo ideal seria que la hitbox del corazon fuera la que se deshabilite por un tiempo, pero xd.
 		self.get_node("CollisionShape2D").set_deferred('disabled',true)
-		print(body.get_node('Movement').direction)
 		
 		if body.get_node('Movement').direction != Vector2(0,0):
 			body.get_node('Health').Health_Update(damage)
+			emit_signal('movement',true)
+		else:
+			emit_signal('movement',false)
 
 	else:
 		queue_free()
