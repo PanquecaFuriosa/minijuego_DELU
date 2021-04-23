@@ -38,7 +38,6 @@ func inhabilita_puertas():
 
 	
 func _ready():
-	print("hola")
 	revisa_puertas()
 	inhabilita_puertas()
 	get_node("Player/CollisionShape2D").set_shape(playerhitbox)

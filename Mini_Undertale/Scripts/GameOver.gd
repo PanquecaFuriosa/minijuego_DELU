@@ -17,7 +17,7 @@ func _ready():
 	$Trozos.stop()
 	yield(get_tree().create_timer(0.5),'timeout')
 	$DETERMINATION.play()
-	yield(get_tree().create_timer(22),'timeout')
+	yield(get_tree().create_timer(24),'timeout')
 	get_tree().change_scene("res://main.tscn")
 	
 
