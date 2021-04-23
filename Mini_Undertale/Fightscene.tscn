@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Fightscene.gd" type="Script" id=1]
 [ext_resource path="res://Escenas/GameOver.tscn" type="PackedScene" id=2]
@@ -10,10 +10,22 @@
 [ext_resource path="res://fightgui.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Sprites/fondo.png" type="Texture" id=9]
 [ext_resource path="res://SpeechGlobe.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sprites/Animacion_perdonar/nube3.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Animacion_perdonar/nube1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Animacion_perdonar/nube2.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Animacion_perdonar/nube4.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Animacion_perdonar/nube5.png" type="Texture" id=15]
+[ext_resource path="res://Audio/snd_vaporized.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Escenas/Credits.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Audio/snd_hurt1.ogg" type="AudioStream" id=18]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.823529, 0.823529, 0.823529, 1, 0.631373, 0.631373, 0.631373, 0 )
 
 [node name="Fightscene" type="Node2D"]
 script = ExtResource( 1 )
 game_over = ExtResource( 2 )
+credits = ExtResource( 17 )
 
 [node name="fondo" type="Sprite" parent="."]
 position = Vector2( 525.406, 300.621 )
@@ -62,9 +74,87 @@ margin_bottom = 600.0
 [node name="Mixtape" type="AudioStreamPlayer" parent="."]
 volume_db = -12.0
 
+[node name="Vaporized" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
 [node name="TextureRect" parent="." instance=ExtResource( 10 )]
 margin_left = 590.101
 margin_top = 67.7157
 margin_right = 715.101
 margin_bottom = 207.716
+
+[node name="Nubes" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource( 12 )
+emission_shape = 1
+emission_sphere_radius = 85.0
+spread = 0.0
+gravity = Vector2( 0, -50 )
+color_ramp = SubResource( 1 )
+
+[node name="Nubes2" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource( 13 )
+emission_shape = 1
+emission_sphere_radius = 85.0
+spread = 0.0
+gravity = Vector2( 0, -50 )
+color_ramp = SubResource( 1 )
+
+[node name="Nubes3" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource( 11 )
+emission_shape = 1
+emission_sphere_radius = 85.0
+spread = 0.0
+gravity = Vector2( 0, -50 )
+color_ramp = SubResource( 1 )
+
+[node name="Nubes4" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource( 14 )
+emission_shape = 1
+emission_sphere_radius = 85.0
+spread = 0.0
+gravity = Vector2( 0, -50 )
+color_ramp = SubResource( 1 )
+
+[node name="Nubes5" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 1.0
+texture = ExtResource( 15 )
+emission_shape = 1
+emission_sphere_radius = 85.0
+spread = 0.0
+gravity = Vector2( 0, -50 )
+color_ramp = SubResource( 1 )
+
+[node name="Hurt" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -8.0
 [connection signal="timeout" from="TurnTimer" to="." method="Start_Player_Turn"]
+[connection signal="back_world" from="GUI" to="." method="_on_GUI_back_world"]
