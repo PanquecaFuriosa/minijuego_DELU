@@ -10,4 +10,4 @@ func _ready():
 	set_spare_state(["* Froggit seems reluctant to fight you."], ["current"])
 	set_new_state("Low HP.", ["* Froggit is trying to run away."], ["current"], false)
 	play_state(states.get("neutral")) 
-	set_spare_requirement("Compliment", 1)
+	set_spare_requirement("Check", 1)

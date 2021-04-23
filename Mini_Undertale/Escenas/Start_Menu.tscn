@@ -52,7 +52,7 @@ custom_styles/separator = SubResource( 1 )
 margin_left = 328.0
 margin_top = 66.0
 margin_right = 696.0
-margin_bottom = 278.0
+margin_bottom = 279.0
 size_flags_horizontal = 4
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.7
@@ -60,9 +60,9 @@ custom_fonts/font = SubResource( 2 )
 text = "the game"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 282.0
+margin_top = 283.0
 margin_right = 1024.0
-margin_bottom = 407.0
+margin_bottom = 408.0
 size_flags_vertical = 3
 
 [node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
@@ -100,7 +100,7 @@ margin_right = 696.0
 margin_bottom = 125.0
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
-margin_top = 411.0
+margin_top = 412.0
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_vertical = 3

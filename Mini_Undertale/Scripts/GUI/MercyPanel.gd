@@ -20,6 +20,7 @@ func _ready():
 	
 func turn_color():
 	can_spare = true
+	print("me puedes perdonar weon")
 	spare_button_text.add_color_override("font_color", Color( 0, 1, 1, 1 ))
 	
 

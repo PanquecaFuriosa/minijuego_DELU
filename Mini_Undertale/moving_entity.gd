@@ -25,4 +25,3 @@ func _process(delta):
 		else:
 			get_child(4).stop()
 
-

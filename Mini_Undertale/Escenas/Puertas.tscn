@@ -41,7 +41,7 @@ tile_data = PoolIntArray( 0, 0, 0 )
 light_mask = 16
 position = Vector2( 516.174, 117.806 )
 collision_layer = 16
-collision_mask = 2
+collision_mask = 2147483650
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 1"]
 visible = false
@@ -62,7 +62,7 @@ shape = SubResource( 3 )
 [node name="Puerta 3" type="Area2D" parent="."]
 light_mask = 16
 position = Vector2( 160, 520 )
-collision_layer = 16
+collision_layer = 32
 collision_mask = 2147483650
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta 3"]
