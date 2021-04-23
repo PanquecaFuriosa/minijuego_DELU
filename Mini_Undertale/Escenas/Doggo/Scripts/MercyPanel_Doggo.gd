@@ -10,5 +10,4 @@ func _ready():
 	
 func revert_color():
 	can_spare = false
-	print("nowelacagaste.jpg")
 	spare_button_text.add_color_override("font_color", Color( 1, 1, 1, 1 ))
