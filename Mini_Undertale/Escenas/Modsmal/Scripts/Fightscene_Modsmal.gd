@@ -38,6 +38,11 @@ func Start_Enemy_Turn():
 
 #Por que raios esto no funciona si lo pongo en el script Base :D?
 func _ready():
+	$Nubes.position = $Enemy.position
+	$Nubes2.position = $Enemy.position
+	$Nubes3.position = $Enemy.position
+	$Nubes4.position = $Enemy.position
+	$Nubes5.position = $Enemy.position
 	rng.randomize()
 	get_child(3).get_child(1).queue_free()
 	get_child(3).get_child(4).queue_free()
@@ -48,6 +53,31 @@ func _ready():
 #Esto tambien lo puse en el base y parece funcionar, de tohs modos aquies ta
 """
 func _on_GUI_back_world():
+<<<<<<< HEAD
 	yield(get_tree().create_timer(5), "timeout")
 	get_tree().change_scene("res://main.tscn")
 """
+=======
+	$Vaporized.play()
+	$Nubes.set_emitting(true)
+	$Nubes2.set_emitting(true)
+	$Nubes3.set_emitting(true)
+	$Nubes4.set_emitting(true)
+	$Nubes5.set_emitting(true)
+	yield(get_tree().create_timer(1.71), "timeout")
+	$Vaporized.stop()
+	yield(get_tree().create_timer(3), "timeout")
+	revisa_puertas()
+	inhabilita_puerta()
+	var values = datos_puertas.values()
+	var seguir = false
+	for value in values:
+		seguir = seguir or value
+	if seguir:
+		get_tree().change_scene("res://main.tscn")
+	else:
+		get_tree().change_scene_to(credits)
+
+
+
+>>>>>>> cf9976e5e4618ee6045a531fbe2bceeb5b85be1d

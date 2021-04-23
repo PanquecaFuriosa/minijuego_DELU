@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Fightscene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenas/Modsmal/Scripts/Fightscene_Modsmal.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Escenas/Modsmal/Scripts/Act_Panel_Modsmal.gd" type="Script" id=7]
 [ext_resource path="res://Escenas/Modsmal/Scripts/Menu_Moldsmal.gd" type="Script" id=8]
 [ext_resource path="res://Escenas/Modsmal/Scripts/SpeechGlobe_Moldsmal.gd" type="Script" id=9]
+[ext_resource path="res://Audio/Enemy(froggit)_theme.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Scripts/Modsmal.gd" type="Script" id=11]
 
 [node name="Fightscene" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -39,17 +41,21 @@ script = ExtResource( 8 )
 [node name="ActPanel" parent="GUI/VBoxContainer/MarginContainer2/Menu" index="1"]
 script = ExtResource( 7 )
 
-[node name="TextureRect" parent="." index="8"]
+[node name="Mixtape" parent="." index="7"]
+stream = ExtResource( 10 )
+
+[node name="Enemy" parent="." index="9" instance=ExtResource( 6 )]
+position = Vector2( 380, 180 )
+scale = Vector2( 1.25, 1.25 )
+script = ExtResource( 11 )
+
+[node name="TextureRect" parent="." index="10"]
 margin_left = 462.0
 margin_top = 102.0
 margin_right = 587.0
 margin_bottom = 242.0
 script = ExtResource( 9 )
-
-[node name="Modsmal" parent="." index="9" instance=ExtResource( 6 )]
-position = Vector2( 380, 180 )
-scale = Vector2( 1.25, 1.25 )
 [connection signal="timeout" from="TurnTimer" to="Commander" method="_on_TurnTimer_timeout"]
-[connection signal="back_world" from="GUI" to="." method="_on_GUI_back_world"]
+[connection signal="back_world" from="GUI" to="Enemy" method="_on_GUI_back_world"]
 
 [editable path="GUI"]
