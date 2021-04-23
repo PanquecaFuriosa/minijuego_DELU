@@ -5,6 +5,7 @@
 [ext_resource path="res://Escenas/Doggo/Scripts/Proyectil_Doggo.gd" type="Script" id=3]
 
 [node name="Area2D" instance=ExtResource( 1 )]
+scale = Vector2( 1.82519, 1.82519 )
 script = ExtResource( 3 )
 velocity = 100
 duration = 2.0

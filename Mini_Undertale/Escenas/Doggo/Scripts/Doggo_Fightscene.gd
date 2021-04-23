@@ -26,3 +26,4 @@ func _on_GUI_back_world():
 
 func Proj_movement_detected(detected :bool):
 	GUI_ActPanel.player_moved = detected
+
