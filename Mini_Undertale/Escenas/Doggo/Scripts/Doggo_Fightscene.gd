@@ -1,5 +1,7 @@
 extends "res://Scripts/Fightscene.gd"
 
+onready var GUI_ActPanel = GUI_Menu.get_node("ActPanel")
+
 func Start_Enemy_Turn():
 	
 	.Start_Enemy_Turn()
@@ -16,8 +18,11 @@ func _ready():
 	get_child(3).add_child(ins_corazon)
 	
 
-"""
+
 func _on_GUI_back_world():
 	yield(get_tree().create_timer(5), "timeout")
 	get_tree().change_scene("res://main.tscn")
-"""
+
+
+func Proj_movement_detected(detected :bool):
+	GUI_ActPanel.player_moved = detected

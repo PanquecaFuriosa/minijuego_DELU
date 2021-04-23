@@ -1,5 +1,7 @@
 extends "res://Escenas/GUI/ActPanel.gd"
 
+var player_moved :bool = true
+
 func _ready():
 	._ready()
 	enemy_name = "Doggo"
@@ -22,6 +24,7 @@ func _ready():
 
 #Hay un pequeño detalle con el spare requirement (WIP)
 func spare_requirement(interaction, times_pressed): 
+	print(player_moved)
 	if interactions.get(interaction).has("times_pressed"): #ve si esta la interaccion que toma como argumento en donde se almacenan las interacciones y verifica si se ha presionado antes
 		if interactions.get(interaction)["times_pressed"] >= times_pressed: #si se ha presionado antes, entonces compara las veces con las veces del arguemento
 			can_be_spared()

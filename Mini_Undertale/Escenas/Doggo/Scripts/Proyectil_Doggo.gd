@@ -6,10 +6,8 @@ export(float) var duration :float = 4.0
 
 onready var placement = get_parent().get_node('Commander/Spawner0').get_global_position()
 
-signal tween_completed
+onready var scene = get_parent()
 
-#Señal para detección/no detección de movimiento
-signal movement(detected)
 
 func _ready():
 	set_process(false)
@@ -28,9 +26,9 @@ func _on_Area2D_body_entered(body):
 		
 		if body.get_node('Movement').direction != Vector2(0,0):
 			body.get_node('Health').Health_Update(damage)
-			emit_signal('movement',true)
+			scene.Proj_movement_detected(true)
 		else:
-			emit_signal('movement',false)
+			scene.Proj_movement_detected(false)
 
 	else:
 		queue_free()
