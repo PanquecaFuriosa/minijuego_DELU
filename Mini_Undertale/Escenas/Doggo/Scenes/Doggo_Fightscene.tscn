@@ -23,6 +23,18 @@ Projectile1 = ExtResource( 5 )
 [node name="Spawner0" parent="Commander" index="0"]
 position = Vector2( 640, 352 )
 
+[node name="Spawner1" parent="Commander" index="1"]
+position = Vector2( 480, 80 )
+
+[node name="Spawner2" parent="Commander" index="2"]
+position = Vector2( 296, 40 )
+
+[node name="Spawner3" parent="Commander" index="3"]
+position = Vector2( 440, 32 )
+
+[node name="Spawner4" parent="Commander" index="4"]
+position = Vector2( 504, 120 )
+
 [node name="Menu" parent="GUI/VBoxContainer/MarginContainer2" index="0"]
 script = ExtResource( 6 )
 
@@ -34,6 +46,22 @@ script = ExtResource( 8 )
 
 [node name="SelectEnemy" parent="GUI/VBoxContainer/MarginContainer2/Menu" index="5"]
 script = ExtResource( 9 )
+
+[node name="HP" parent="GUI/MarginContainer/HBoxContainer3" index="1"]
+margin_right = 681.0
+
+[node name="HBoxContainer" parent="GUI/MarginContainer/HBoxContainer3/HP" index="0"]
+margin_right = 339.0
+
+[node name="ProgressBar" parent="GUI/MarginContainer/HBoxContainer3/HP/HBoxContainer" index="1"]
+margin_right = 298.0
+
+[node name="Number" parent="GUI/MarginContainer/HBoxContainer3/HP/HBoxContainer" index="2"]
+margin_left = 302.0
+margin_right = 339.0
+
+[node name="VSeparator" parent="GUI/MarginContainer/HBoxContainer3" index="2"]
+margin_left = 685.0
 
 [node name="Doggo" parent="." index="9" instance=ExtResource( 4 )]
 position = Vector2( 416, 168 )
