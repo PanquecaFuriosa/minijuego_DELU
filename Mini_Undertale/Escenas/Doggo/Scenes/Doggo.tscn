@@ -11,7 +11,7 @@
 [ext_resource path="res://Escenas/Doggo/Sprites/Face_Excited1.png" type="Texture" id=9]
 [ext_resource path="res://Escenas/Doggo/Sprites/Face_Excited2.png" type="Texture" id=10]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Excited"
 length = 1.6
 loop = true
@@ -40,8 +40,7 @@ tracks/1/keys = {
 "values": [ Vector2( -0.666, -30.005 ), Vector2( -0.666, -24.331 ), Vector2( -0.666, -30.005 ), Vector2( -0.666, -24.331 ) ]
 }
 
-[sub_resource type="Animation" id=1]
-resource_name = "suspicious"
+[sub_resource type="Animation" id=2]
 length = 1.6
 loop = true
 tracks/0/type = "value"
@@ -88,5 +87,5 @@ texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "suspicious"
-anims/Excited = SubResource( 2 )
-anims/suspicious = SubResource( 1 )
+anims/Excited = SubResource( 1 )
+anims/suspicious = SubResource( 2 )

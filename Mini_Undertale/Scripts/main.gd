@@ -57,7 +57,7 @@ func _on_Puertas_cambia_scena(valor):
 	mueve_corazon = true
 	match valor:
 		1:
-			batalla =  preload("res://Escenas/Froggit_batalla.tscn")
+			batalla =  preload("res://Escenas/Doggo/Scenes/Doggo_Fightscene.tscn")
 		2:
 			batalla =  preload("res://Escenas/Modsmal/Scenes/Fightscene_Modsmal.tscn")
 		3:
