@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Fightscene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Escenas/Doggo/Scripts/Doggo_Commander.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Escenas/Doggo/Scripts/MercyPanel_Doggo.gd" type="Script" id=8]
 [ext_resource path="res://Escenas/Doggo/Scripts/SelectionPanel_Doggo.gd" type="Script" id=9]
 [ext_resource path="res://Escenas/Doggo/Scripts/SpeechGlobe_Doggo.gd" type="Script" id=10]
+[ext_resource path="res://Escenas/Doggo/Scenes/Doggo_Pet_Dialog.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Escenas/Doggo/Scripts/Doggo_Spawner.gd" type="Script" id=12]
 
 [node name="Fightscene" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -19,21 +21,27 @@ enemy_turn_duration = 2.25
 [node name="Commander" parent="." index="4"]
 script = ExtResource( 2 )
 Projectile1 = ExtResource( 5 )
+Dialogs = ExtResource( 11 )
 
 [node name="Spawner0" parent="Commander" index="0"]
 position = Vector2( 640, 352 )
+script = ExtResource( 12 )
 
 [node name="Spawner1" parent="Commander" index="1"]
 position = Vector2( 480, 80 )
+script = ExtResource( 12 )
 
 [node name="Spawner2" parent="Commander" index="2"]
 position = Vector2( 296, 40 )
+script = ExtResource( 12 )
 
 [node name="Spawner3" parent="Commander" index="3"]
 position = Vector2( 440, 32 )
+script = ExtResource( 12 )
 
 [node name="Spawner4" parent="Commander" index="4"]
 position = Vector2( 504, 120 )
+script = ExtResource( 12 )
 
 [node name="Menu" parent="GUI/VBoxContainer/MarginContainer2" index="0"]
 script = ExtResource( 6 )

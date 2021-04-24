@@ -11,7 +11,7 @@ func Start_Enemy_Turn():
 	.Start_Enemy_Turn()
 	yield(Box.tweenNode,"tween_completed")
 	Commander.Shoot_Pattern1(Commander.Projectile1,Commander.Spawner0, 1)
-	
+	#Commander.Dialog_Pattern(0.6)
 
 #Por que raios esto no funciona si lo pongo en el script Base :D?
 func _ready():
