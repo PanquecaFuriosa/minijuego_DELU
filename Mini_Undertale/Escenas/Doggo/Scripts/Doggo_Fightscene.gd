@@ -15,6 +15,27 @@ func Start_Enemy_Turn():
 
 #Por que raios esto no funciona si lo pongo en el script Base :D?
 func _ready():
+	
+	#setear las posiciones de las particulas
+	$Nubes.position = $Enemy.position
+	$Nubes2.position = $Enemy.position
+	$Nubes3.position = $Enemy.position
+	$Nubes4.position = $Enemy.position
+	$Nubes5.position = $Enemy.position
+	
+	#setear la cantidad (Doggo es mas grande asi que debe tener más)
+	$Nubes.set_amount(12)
+	$Nubes2.set_amount(12)
+	$Nubes3.set_amount(12)
+	$Nubes4.set_amount(12)
+	$Nubes5.set_amount(12)
+	
+	#setear el radio para que se expanda más
+	$Nubes.set_emission_sphere_radius(90)
+	$Nubes2.set_emission_sphere_radius(90)
+	$Nubes3.set_emission_sphere_radius(90)
+	$Nubes4.set_emission_sphere_radius(90)
+	$Nubes5.set_emission_sphere_radius(90)
 	get_child(3).get_child(1).queue_free()
 	get_child(3).get_child(4).queue_free()
 	get_child(3).get_child(0).set_shape(hitbox)
@@ -24,8 +45,25 @@ func _ready():
 
 
 func _on_GUI_back_world():
-	yield(get_tree().create_timer(5), "timeout")
-	get_tree().change_scene("res://main.tscn")
+	$Vaporized.play()
+	$Nubes.set_emitting(true)
+	$Nubes2.set_emitting(true)
+	$Nubes3.set_emitting(true)
+	$Nubes4.set_emitting(true)
+	$Nubes5.set_emitting(true)
+	yield(get_tree().create_timer(1.71), "timeout")
+	$Vaporized.stop()
+	yield(get_tree().create_timer(3), "timeout")
+	revisa_puertas()
+	inhabilita_puerta()
+	var values = datos_puertas.values()
+	var seguir = false
+	for value in values:
+		seguir = seguir or value
+	if seguir:
+		get_tree().change_scene("res://main.tscn")
+	else:
+		get_tree().change_scene_to(credits)
 
 
 func Proj_movement_detected(detected :bool):

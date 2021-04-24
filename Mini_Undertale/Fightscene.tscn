@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Fightscene.gd" type="Script" id=1]
 [ext_resource path="res://Escenas/GameOver.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Audio/snd_vaporized.ogg" type="AudioStream" id=16]
 [ext_resource path="res://Escenas/Credits.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Audio/snd_hurt1.ogg" type="AudioStream" id=18]
+[ext_resource path="res://Sprites/cuadros.png" type="Texture" id=19]
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 0.823529, 0.823529, 0.823529, 1, 0.631373, 0.631373, 0.631373, 0 )
@@ -63,6 +64,11 @@ position = Vector2( 528.61, 251.529 )
 
 [node name="Spawner4" parent="Commander" instance=ExtResource( 7 )]
 position = Vector2( 486.184, 271.328 )
+
+[node name="cuadros" type="Sprite" parent="."]
+position = Vector2( 505, 125.844 )
+scale = Vector2( 1.5, 0.9 )
+texture = ExtResource( 19 )
 
 [node name="TurnTimer" type="Timer" parent="."]
 one_shot = true

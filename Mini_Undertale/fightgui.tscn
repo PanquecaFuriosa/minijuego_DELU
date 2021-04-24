@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/Act_panel_froggit.gd" type="Script" id=1]
 [ext_resource path="res://Escenas/GUI/GenericPanel3.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Sprites/GUI/mercyButtonFocused.png" type="Texture" id=19]
 [ext_resource path="res://Scripts/fightend.gd" type="Script" id=20]
 [ext_resource path="res://Fonts/PixelOperatorMono-Bold.ttf" type="DynamicFontData" id=21]
+[ext_resource path="res://Audio/SND_TXT2.ogg" type="AudioStream" id=22]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -40,10 +41,22 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.6 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("letras:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
 }
 
 [sub_resource type="StyleBoxEmpty" id=5]
@@ -373,6 +386,10 @@ autowrap = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/MarginContainer2/Menu/Dialogo/MarginContainer/GridContainer4/Label"]
 autoplay = "letras"
 anims/letras = SubResource( 4 )
+
+[node name="letras" type="AudioStreamPlayer" parent="VBoxContainer/MarginContainer2/Menu/Dialogo/MarginContainer/GridContainer4/Label"]
+stream = ExtResource( 22 )
+volume_db = -10.0
 
 [node name="SelectEnemy" parent="VBoxContainer/MarginContainer2/Menu" instance=ExtResource( 2 )]
 visible = false
