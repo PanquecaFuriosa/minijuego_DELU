@@ -10,8 +10,13 @@
 [ext_resource path="res://Escenas/Doggo/Scripts/MercyPanel_Doggo.gd" type="Script" id=8]
 [ext_resource path="res://Escenas/Doggo/Scripts/SelectionPanel_Doggo.gd" type="Script" id=9]
 [ext_resource path="res://Escenas/Doggo/Scripts/SpeechGlobe_Doggo.gd" type="Script" id=10]
+<<<<<<< HEAD
 [ext_resource path="res://Audio/Enemy(froggit)_theme.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Escenas/Doggo/Scripts/Doggo.gd" type="Script" id=12]
+=======
+[ext_resource path="res://Escenas/Doggo/Scenes/Doggo_Pet_Dialog.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Escenas/Doggo/Scripts/Doggo_Spawner.gd" type="Script" id=12]
+>>>>>>> 3b3ba3005c275d54824b2aeb01d751dc1f2d661a
 
 [node name="Fightscene" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
@@ -21,9 +26,27 @@ enemy_turn_duration = 2.25
 [node name="Commander" parent="." index="4"]
 script = ExtResource( 2 )
 Projectile1 = ExtResource( 5 )
+Dialogs = ExtResource( 11 )
 
 [node name="Spawner0" parent="Commander" index="0"]
 position = Vector2( 640, 352 )
+script = ExtResource( 12 )
+
+[node name="Spawner1" parent="Commander" index="1"]
+position = Vector2( 480, 80 )
+script = ExtResource( 12 )
+
+[node name="Spawner2" parent="Commander" index="2"]
+position = Vector2( 304, 16 )
+script = ExtResource( 12 )
+
+[node name="Spawner3" parent="Commander" index="3"]
+position = Vector2( 440, 32 )
+script = ExtResource( 12 )
+
+[node name="Spawner4" parent="Commander" index="4"]
+position = Vector2( 504, 120 )
+script = ExtResource( 12 )
 
 [node name="Menu" parent="GUI/VBoxContainer/MarginContainer2" index="0"]
 script = ExtResource( 6 )
@@ -37,16 +60,43 @@ script = ExtResource( 8 )
 [node name="SelectEnemy" parent="GUI/VBoxContainer/MarginContainer2/Menu" index="5"]
 script = ExtResource( 9 )
 
+<<<<<<< HEAD
 [node name="Mixtape" parent="." index="7"]
 stream = ExtResource( 11 )
 
 [node name="Enemy" parent="." index="9" instance=ExtResource( 4 )]
+=======
+[node name="HP" parent="GUI/MarginContainer/HBoxContainer3" index="1"]
+margin_right = 681.0
+
+[node name="HBoxContainer" parent="GUI/MarginContainer/HBoxContainer3/HP" index="0"]
+margin_right = 339.0
+
+[node name="ProgressBar" parent="GUI/MarginContainer/HBoxContainer3/HP/HBoxContainer" index="1"]
+margin_right = 298.0
+
+[node name="Number" parent="GUI/MarginContainer/HBoxContainer3/HP/HBoxContainer" index="2"]
+margin_left = 302.0
+margin_right = 339.0
+
+[node name="VSeparator" parent="GUI/MarginContainer/HBoxContainer3" index="2"]
+margin_left = 685.0
+
+[node name="Doggo" parent="." index="9" instance=ExtResource( 4 )]
+>>>>>>> 3b3ba3005c275d54824b2aeb01d751dc1f2d661a
 position = Vector2( 416, 168 )
 scale = Vector2( 1.7528, 1.94147 )
 script = ExtResource( 12 )
 
 [node name="TextureRect" parent="." index="10"]
 script = ExtResource( 10 )
+<<<<<<< HEAD
 [connection signal="back_world" from="GUI" to="Enemy" method="_on_GUI_back_world"]
+=======
+[connection signal="it_can_be_spared" from="GUI/VBoxContainer/MarginContainer2/Menu/ActPanel" to="Doggo" method="_on_ActPanel_it_can_be_spared"]
+[connection signal="it_can_be_spared" from="GUI/VBoxContainer/MarginContainer2/Menu/ActPanel" to="." method="_on_ActPanel_it_can_be_spared"]
+[connection signal="not_spared_anymore" from="GUI/VBoxContainer/MarginContainer2/Menu/ActPanel" to="Doggo" method="_on_ActPanel_not_spared_anymore"]
+[connection signal="not_spared_anymore" from="GUI/VBoxContainer/MarginContainer2/Menu/ActPanel" to="." method="_on_ActPanel_not_spared_anymore"]
+>>>>>>> 3b3ba3005c275d54824b2aeb01d751dc1f2d661a
 
 [editable path="GUI"]
