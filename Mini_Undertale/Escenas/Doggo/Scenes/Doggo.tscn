@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Escenas/Doggo/Sprites/BodyParts2.png" type="Texture" id=1]
 [ext_resource path="res://Escenas/Doggo/Sprites/BodyParts3.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Escenas/Doggo/Sprites/Faces4.png" type="Texture" id=8]
 [ext_resource path="res://Escenas/Doggo/Sprites/Face_Excited1.png" type="Texture" id=9]
 [ext_resource path="res://Escenas/Doggo/Sprites/Face_Excited2.png" type="Texture" id=10]
+[ext_resource path="res://Escenas/Doggo/Scripts/Doggo_Animation.gd" type="Script" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Excited"
@@ -69,6 +70,7 @@ tracks/1/keys = {
 }
 
 [node name="Doggo" type="Node2D"]
+script = ExtResource( 11 )
 
 [node name="Body" type="Sprite" parent="."]
 texture = ExtResource( 4 )
@@ -82,7 +84,7 @@ position = Vector2( -23, 4 )
 texture = ExtResource( 2 )
 
 [node name="Head" type="Sprite" parent="."]
-position = Vector2( -8.16686, -48.1669 )
+position = Vector2( -8.167, -48.167 )
 texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
