@@ -5,6 +5,8 @@ var spared :bool = false
 
 var first_turn :bool = true
 
+var spare_counter :int = 0
+
 signal not_spared_anymore
 
 
@@ -31,16 +33,23 @@ func _ready():
 func spare_requirement(interaction, times_pressed): 
 
 	if spared:
+		spare_counter = spare_counter + 1
 		spare_check()
 	
 	else:
-		
 		if interactions.get(interaction).has("times_pressed") and not player_moved and not first_turn: #ve si esta la interaccion que toma como argumento en donde se almacenan las interacciones y verifica si se ha presionado antes
+			
 			if interactions.get(interaction)["times_pressed"] >= times_pressed: #si se ha presionado antes, entonces compara las veces con las veces del arguemento
 				#can_be_spared() #Esta linea es redundante considerando lo que hace la funcion de abajo. Chequear en ActPanel.gd
 				play_state(states["spare"]) #y corre el estado de spare. Esta funcion es llamada cada vez que inicia un turno
 				#Cambiar esto si hay alguna otra forma de saber si se puede perdonar o no.
 				spared = true
+			
+		elif player_moved:
+			play_state(states.get("After_moving")) 
+		else:
+			play_state(states.get("After_not_moving")) 
+			
 				
 	if first_turn:
 		first_turn = false
@@ -53,6 +62,7 @@ func spare_check():
 		#Vuelve al estado neutral
 		play_state(states.get("neutral"))
 		spared = false
+		spare_counter = 0
 		
 func not_be_spared():
 	emit_signal("not_spared_anymore")
