@@ -32,7 +32,7 @@ position = Vector2( 480, 80 )
 script = ExtResource( 12 )
 
 [node name="Spawner2" parent="Commander" index="2"]
-position = Vector2( 296, 40 )
+position = Vector2( 304, 16 )
 script = ExtResource( 12 )
 
 [node name="Spawner3" parent="Commander" index="3"]
@@ -77,5 +77,9 @@ scale = Vector2( 1.7528, 1.94147 )
 
 [node name="TextureRect" parent="." index="10"]
 script = ExtResource( 10 )
+[connection signal="it_can_be_spared" from="GUI/VBoxContainer/MarginContainer2/Menu/ActPanel" to="Doggo" method="_on_ActPanel_it_can_be_spared"]
+[connection signal="it_can_be_spared" from="GUI/VBoxContainer/MarginContainer2/Menu/ActPanel" to="." method="_on_ActPanel_it_can_be_spared"]
+[connection signal="not_spared_anymore" from="GUI/VBoxContainer/MarginContainer2/Menu/ActPanel" to="Doggo" method="_on_ActPanel_not_spared_anymore"]
+[connection signal="not_spared_anymore" from="GUI/VBoxContainer/MarginContainer2/Menu/ActPanel" to="." method="_on_ActPanel_not_spared_anymore"]
 
 [editable path="GUI"]

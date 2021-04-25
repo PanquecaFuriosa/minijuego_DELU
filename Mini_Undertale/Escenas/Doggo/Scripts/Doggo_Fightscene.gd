@@ -11,7 +11,6 @@ func Start_Enemy_Turn():
 	.Start_Enemy_Turn()
 	yield(Box.tweenNode,"tween_completed")
 	Commander.Shoot_Pattern1(Commander.Projectile1,Commander.Spawner0, 1)
-	#Commander.Dialog_Pattern(0.6)
 
 #Por que raios esto no funciona si lo pongo en el script Base :D?
 func _ready():
@@ -31,3 +30,12 @@ func _on_GUI_back_world():
 func Proj_movement_detected(detected :bool):
 	GUI_ActPanel.player_moved = detected
 
+
+#PET? PAT? POT?
+func _on_ActPanel_it_can_be_spared():
+	Commander.PET = true
+	Commander.Dialog_Pattern(0.6)
+
+# :c
+func _on_ActPanel_not_spared_anymore():
+	Commander.PET = false
