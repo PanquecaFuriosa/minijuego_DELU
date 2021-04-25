@@ -15,8 +15,8 @@ func _ready():
 func Shoot_Pattern1(what :PackedScene, where: Position2D, reload_time :float = 0, direction: float = 0):
 	where.Fire(what, direction)
 	
-func Rect_Shoot_Pattern(what :PackedScene, where: Position2D, reload_time :float = 0, direction: float = 0):
-	where.Rect_Fire(what, direction)
+func Rect_Shoot_Pattern(what :PackedScene, where: Position2D, flip: bool = false):
+	where.Rect_Fire(what, flip)
 
 #Usado para los dialogos al entrar en estado PET 
 func Dialog_Pattern(reload_time :float = 0.5):
@@ -30,7 +30,7 @@ func Dialog_Pattern(reload_time :float = 0.5):
 		#y cuando la batalla termina
 		match location:
 			1:
-				Rect_Shoot_Pattern(Dialogs, Spawner1)
+				Rect_Shoot_Pattern(Dialogs, Spawner1,true)
 
 			2:
 				Rect_Shoot_Pattern(Dialogs, Spawner2)
