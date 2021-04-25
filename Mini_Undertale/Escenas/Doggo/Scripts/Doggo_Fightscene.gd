@@ -45,6 +45,9 @@ func _ready():
 
 
 func _on_GUI_back_world():
+	
+	Commander.PET = false
+	
 	$Vaporized.play()
 	$Nubes.set_emitting(true)
 	$Nubes2.set_emitting(true)
@@ -68,4 +71,13 @@ func _on_GUI_back_world():
 
 func Proj_movement_detected(detected :bool):
 	GUI_ActPanel.player_moved = detected
+
+#PET? PAT? POT?
+func _on_ActPanel_it_can_be_spared():
+	Commander.PET = true
+	Commander.Dialog_Pattern(0.6)
+
+# :c
+func _on_ActPanel_not_spared_anymore():
+	Commander.PET = false
 

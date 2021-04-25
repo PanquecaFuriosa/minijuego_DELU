@@ -9,6 +9,10 @@ var spare_counter :int = 0
 
 signal not_spared_anymore
 
+#Lo mismo que la anterior, pero no cambia los botones de perdonar (aka no esta conectada a Selection ni a MercyPanel)
+#En los demas nodos activa la misma funcion
+signal enough_pet
+
 
 func _ready():
 	._ready()
@@ -34,7 +38,7 @@ func _ready():
 	set_new_state("Spared_4",["* Doggo has been pet."], ["current"], true)
 	
 	play_state(states.get("neutral")) 
-	set_spare_requirement("Check", 1)
+	set_spare_requirement("Pet", 1)
 
 func spare_requirement(interaction, times_pressed): 
 
@@ -91,5 +95,6 @@ func switch_spare_state():
 			play_state(states.get("Spared_3"))
 		4:
 			play_state(states.get("Spared_4"))
+			emit_signal("enough_pet")   #Todavia estará en spare, pero no actuará como tal e.e
 		
 	print("van "+ str(spare_counter)+ " turnos.")
