@@ -38,7 +38,7 @@ func _ready():
 	set_new_state("Spared_4",["* Doggo has been pet."], ["current"], true)
 	
 	play_state(states.get("neutral")) 
-	set_spare_requirement("Pet", 2)
+	set_spare_requirement("Pet", 1)
 
 func spare_requirement(interaction, times_pressed): 
 
