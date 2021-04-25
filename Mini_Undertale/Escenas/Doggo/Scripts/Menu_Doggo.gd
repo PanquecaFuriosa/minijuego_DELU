@@ -8,4 +8,4 @@ func _ready():
 	add_option("un peluche", "item", null)
 	add_option("Doggo.", "selection", null)
 	add_option_page(
-		["Check", "Pet"] , ["* How can you resist petting the dog?", """* You pet Doggo."""], "act")
+		["Check", "Pet"] , ["How can you resist petting the dog?", """* You pet Doggo."""], "act")

@@ -26,7 +26,7 @@ func _ready():
 	
 	
 	play_state(states.get("neutral")) 
-	set_spare_requirement("Check", 1)
+	set_spare_requirement("Pet", 1)
 
 func spare_requirement(interaction, times_pressed): 
 
