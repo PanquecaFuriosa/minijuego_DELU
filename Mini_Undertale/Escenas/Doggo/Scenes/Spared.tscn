@@ -19,7 +19,7 @@
 0/z_index = 0
 
 [node name="Sprite" type="TileMap"]
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.45, 0.45 )
 tile_set = SubResource( 1 )
 format = 1
 tile_data = PoolIntArray( -65537, 0, 0 )

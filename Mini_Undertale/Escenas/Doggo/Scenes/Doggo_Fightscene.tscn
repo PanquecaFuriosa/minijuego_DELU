@@ -57,31 +57,18 @@ script = ExtResource( 8 )
 [node name="SelectEnemy" parent="GUI/VBoxContainer/MarginContainer2/Menu" index="5"]
 script = ExtResource( 9 )
 
-[node name="HP" parent="GUI/MarginContainer/HBoxContainer3" index="1"]
-margin_right = 681.0
-
-[node name="HBoxContainer" parent="GUI/MarginContainer/HBoxContainer3/HP" index="0"]
-margin_right = 339.0
-
-[node name="ProgressBar" parent="GUI/MarginContainer/HBoxContainer3/HP/HBoxContainer" index="1"]
-margin_right = 298.0
-
-[node name="Number" parent="GUI/MarginContainer/HBoxContainer3/HP/HBoxContainer" index="2"]
-margin_left = 302.0
-margin_right = 339.0
-
-[node name="VSeparator" parent="GUI/MarginContainer/HBoxContainer3" index="2"]
-margin_left = 685.0
-
 [node name="Mixtape" parent="." index="8"]
 stream = ExtResource( 11 )
 
 [node name="Enemy" parent="." index="9" instance=ExtResource( 4 )]
-position = Vector2( 416, 168 )
+position = Vector2( 420, 168 )
 scale = Vector2( 1.7528, 1.94147 )
 script = ExtResource( 12 )
 
 [node name="TextureRect" parent="." index="11"]
+margin_left = 490.0
+margin_right = 615.0
+margin_bottom = 190.0
 script = ExtResource( 10 )
 [connection signal="back_world" from="GUI" to="Enemy" method="_on_GUI_back_world"]
 [connection signal="enough_pet" from="GUI/VBoxContainer/MarginContainer2/Menu/ActPanel" to="." method="_on_ActPanel_not_spared_anymore"]

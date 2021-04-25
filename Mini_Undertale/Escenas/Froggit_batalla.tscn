@@ -30,17 +30,21 @@ position = Vector2( 610, 260 )
 position = Vector2( 585, 410 )
 script = ExtResource( 7 )
 
-[node name="GUI" parent="." index="6"]
-margin_left = -0.306351
-
 [node name="Enemy" parent="." index="7" instance=ExtResource( 3 )]
-position = Vector2( 460, 165 )
-scale = Vector2( 3, 3 )
+position = Vector2( 460, 175 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 6 )
 
-[node name="Mixtape" parent="." index="8"]
+[node name="GUI" parent="." index="8"]
+margin_left = -0.306351
+
+[node name="Mixtape" parent="." index="9"]
 stream = ExtResource( 5 )
 
-[node name="TextureRect" parent="." index="10"]
+[node name="TextureRect" parent="." index="11"]
+margin_left = 550.0
+margin_top = 120.0
+margin_right = 675.0
+margin_bottom = 200.0
 script = ExtResource( 9 )
 [connection signal="back_world" from="GUI" to="Enemy" method="_on_GUI_back_world"]

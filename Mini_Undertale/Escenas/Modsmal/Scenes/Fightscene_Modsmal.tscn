@@ -41,7 +41,7 @@ script = ExtResource( 8 )
 [node name="ActPanel" parent="GUI/VBoxContainer/MarginContainer2/Menu" index="1"]
 script = ExtResource( 7 )
 
-[node name="Mixtape" parent="." index="7"]
+[node name="Mixtape" parent="." index="8"]
 stream = ExtResource( 10 )
 
 [node name="Enemy" parent="." index="9" instance=ExtResource( 6 )]
@@ -49,11 +49,11 @@ position = Vector2( 380, 180 )
 scale = Vector2( 1.25, 1.25 )
 script = ExtResource( 11 )
 
-[node name="TextureRect" parent="." index="10"]
+[node name="TextureRect" parent="." index="11"]
 margin_left = 462.0
 margin_top = 102.0
 margin_right = 587.0
-margin_bottom = 242.0
+margin_bottom = 220.0
 script = ExtResource( 9 )
 [connection signal="timeout" from="TurnTimer" to="Commander" method="_on_TurnTimer_timeout"]
 [connection signal="back_world" from="GUI" to="Enemy" method="_on_GUI_back_world"]
