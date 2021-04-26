@@ -1,5 +1,15 @@
 extends Node
-var datos_puertas: Dictionary
+var datos_puertas = {
+	"puerta1": true,
+	"puerta2": true,
+	"puerta3": true,
+	"puerta4": true,
+	"puerta5": true,
+	"puerta6": true,
+	"puerta7": true,
+	"puerta8": true,
+	"puerta9": true,
+}
 
 func inicializar_puertas():
 	#Creo el nuevo archivo json donde se sobreescribiran los datos de las puertas
@@ -21,12 +31,6 @@ func _ready():
 	if not(ruta.dir_exists("user://Puertas habilitadas")):
 		ruta.open("user://")
 		ruta.make_dir("user://Puertas habilitadas")
-	
-	#Lee un archivo Json con los estados iniciales de las puertas
-	var puertas_iniciales = File.new()
-	puertas_iniciales.open("res://Scripts/Guardado de puertas/Puertas.json", File.READ)
-	datos_puertas = JSON.parse(puertas_iniciales.get_as_text()).result
-	puertas_iniciales.close()
 	
 	inicializar_puertas()
 	

@@ -42,10 +42,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.2, 1.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [ 0.0, 0.0, 1.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("letras:playing")
@@ -383,6 +383,7 @@ size_flags_vertical = 2
 custom_fonts/font = SubResource( 3 )
 text = "you wanna have a bad      t     o        m"
 autowrap = true
+percent_visible = 0.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/MarginContainer2/Menu/Dialogo/MarginContainer/GridContainer4/Label"]
 autoplay = "letras"
